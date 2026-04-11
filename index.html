@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>GALERI VIDEO PRO v4</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        background: #0f172a;
+        color: white;
+        margin: 0;
+      }
+
+      /* Menu */
+      /* ===== MENU ===== */
+.top-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 9999;
+}
+
+/* LINK MENU */
+.top-menu a {
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    backdrop-filter: blur(10px);
+    background: rgba(4, 147, 142, 0.4);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: 0.3s;
+}
+
+.top-menu a:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 15px #22c55e;
+}
+
+      .container {
+        padding: 20px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+      }
+
+      .card {
+        background: #1e293b;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card img {
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+      }
+
+      .btn {
+        padding: 8px;
+        margin: 5px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 8px;
+        background: #22c55e;
+      }
+
+      .danger {
+        background: red;
+      }
+
+      .link {
+        background: #3b82f6;
+      }
+
+      .play {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 6px 10px;
+        border-radius: 50%;
+      }
+
+      .watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-25deg);
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.1);
+      }
+
+      .adminBtn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(45deg, red, orange);
+        padding: 10px 14px;
+        border-radius: 10px;
+        cursor: pointer;
+        z-index: 9999;
+      }
+
+      #adminPanel {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #020617;
+        overflow: auto;
+        padding: 20px;
+        z-index: 9999;
+      }
+
+      .stats {
+        background: #0f172a;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 6px;
+      }
+
+      #popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .popupBox {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 420px;
+        width: 90%;
+        max-height: 85vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .popupContent {
+        overflow-y: auto;
+        max-height: 50vh;
+        padding-right: 5px;
+      }
+
+      .popupFooter {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .popupFooter .btn {
+        flex: 1;
+      }
+
+      .popupImg {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 6px;
+      }
+
+      @media (max-width: 600px) {
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .card img {
+          height: 300px;
+        }
+      }
+
+      /* ANTI DRAG */
+      img{
+pointer-events:none;
+user-select:none;
+}
+
+/* ANTI HIGHLIGHT */
+body{
+user-select:none;
+-webkit-user-select:none;
+}
+    </style>
+  </head>
+
+  <body>
+    <div class="top-menu" id="topMenu">
+    <a href="https://linkvertise.com/?publisherClosed=true&affiliate_id=1314520">📷 Daftar Shorlink</a>
+</div>
+    <div class="adminBtn" onclick="loginAdmin()">⚙️ ADMIN</div>
+
+    <div class="container">
+      <div class="header">
+        <h2>
+          🔥 Gallery Video Gratis <br />Almaira
+          <span style="font-style: italic; color: orange">Olstore</span>
+        </h2>
+        <p>Klik download untuk mendapatkan bahan video reels bebas hak cipta</p>
+      </div>
+
+      <div class="gallery" id="gallery"></div>
+    </div>
+
+    <!-- POPUP DOWNLOAD -->
+    <!-- POPUP DOWNLOAD -->
+    <div id="popup">
+      <div class="popupBox">
+        <h3>Cara Download</h3>
+
+        <p style="font-size: 14px">
+          1. Klik tombol GET LINK<br />
+          2. Pilih WATCH ADS<br />
+          3. Continue<br />
+          4. Skip iklan sampai 3 tampilan dan muncul tombol OPEN<br />
+          5. Klik download
+        </p>
+
+        <div class="popupContent">
+          <img class="popupImg" src="img/tipsDOWNLOAD.jpg" />
+          <img class="popupImg" src="img/tipsDOWNLOAD2.jpg" />
+        </div>
+
+        <div class="popupFooter">
+          <button class="btn" onclick="goDownload()">▶ Lanjut Download</button>
+
+          <button class="btn danger" onclick="closePopup()">❌ Tutup</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADMIN PANEL -->
+    <div id="adminPanel">
+      <h2>⚙️ ADMIN PANEL</h2>
+
+      <div class="stats" id="stats"></div>
+
+      <div
+        style="
+          background: #0f172a;
+          padding: 15px;
+          border-radius: 10px;
+          margin-bottom: 20px;
+        "
+      >
+        <h3>Ganti Password</h3>
+
+        <input id="oldPass" type="password" placeholder="Password lama" />
+        <input id="newPass" type="password" placeholder="Password baru" />
+
+        <button class="btn" onclick="changePassword()">Simpan Password</button>
+        <button class="btn danger" onclick="logoutAdmin()">Logout</button>
+      </div>
+
+      <button class="btn" onclick="addVideo()">Tambah Video</button>
+      <button class="btn link" onclick="exportData()">Export Data</button>
+      <input type="file" onchange="importData(event)" />
+
+      <hr />
+
+      <div id="adminList"></div>
+    </div>
+
+    <script>
+      /* ================= ADMIN SYSTEM ================= */
+
+      let adminPassword = localStorage.getItem("adminPassword") || "alif123";
+      let isAdmin = localStorage.getItem("adminLogin") === "true";
+
+      function loginAdmin() {
+        let pass = prompt("Masukkan password admin");
+
+        if (pass === adminPassword) {
+          isAdmin = true;
+          localStorage.setItem("adminLogin", "true");
+
+          document.getElementById("adminPanel").style.display = "block";
+
+          renderAdmin();
+        } else {
+          alert("Password salah");
+        }
+      }
+
+      function logoutAdmin() {
+        isAdmin = false;
+        localStorage.removeItem("adminLogin");
+
+        document.getElementById("adminPanel").style.display = "none";
+      }
+
+      function changePassword() {
+        let oldP = document.getElementById("oldPass").value;
+        let newP = document.getElementById("newPass").value;
+
+        if (oldP !== adminPassword) {
+          alert("Password lama salah");
+          return;
+        }
+
+        adminPassword = newP;
+        localStorage.setItem("adminPassword", newP);
+
+        alert("Password berhasil diganti");
+      }
+
+      /* ================= DATABASE ================= */
+
+      let videoData = JSON.parse(localStorage.getItem("videoData")) || [];
+
+      function save() {
+        localStorage.setItem("videoData", JSON.stringify(videoData));
+
+        render();
+        renderAdmin();
+        renderStats();
+      }
+
+      /* ================= USER GALLERY ================= */
+
+      function render() {
+        let html = "";
+
+        videoData.forEach((v, i) => {
+          let status =
+            v.status === "available" ? "🟢 Tersedia" : "🔴 Kadaluarsa";
+
+          html += `
+
+<div class="card">
+
+<img loading="lazy" src="${v.thumbnail || "https://via.placeholder.com/400"}">
+
+<div class="play">▶</div>
+
+<div class="watermark">PRO</div>
+
+<div class="btn" onclick="openPopup(${i})">⬇ Download</div>
+
+<div style="text-align:center;font-size:13px">
+Status : ${status}
+</div>
+
+<div style="text-align:center;font-size:12px;color:#cbd5e1">
+Download : ${v.download || 0}
+</div>
+
+</div>
+
+`;
+        });
+
+        document.getElementById("gallery").innerHTML = html;
+      }
+
+      /* ================= ADMIN LIST ================= */
+
+      function renderAdmin() {
+        if (!isAdmin) return;
+
+        let html = "";
+
+        videoData.forEach((v, i) => {
+          html += `
+
+<div style="background:#1e293b;padding:15px;margin:10px;border-radius:10px">
+
+<img id="preview${i}" src="${v.thumbnail}" style="width:150px;height:100px;object-fit:cover">
+
+<input type="file" onchange="uploadThumb(event,${i})">
+
+<input id="link${i}" value="${v.link ? atob(v.link) : ""}" placeholder="Link video">
+
+<button class="btn link" onclick="saveLink(${i})">Simpan Link</button>
+
+<button class="btn danger" onclick="deleteVideo(${i})">Hapus</button>
+
+</div>
+
+`;
+        });
+
+        document.getElementById("adminList").innerHTML = html;
+      }
+
+      /* ================= STATISTIK ================= */
+
+      function renderStats() {
+        let totalVideo = videoData.length;
+        let totalDownload = videoData.reduce(
+          (a, b) => a + (b.download || 0),
+          0,
+        );
+
+        document.getElementById("stats").innerHTML =
+          "Total Video : " +
+          totalVideo +
+          "<br>Total Download : " +
+          totalDownload;
+      }
+
+      /* ================= VIDEO MANAGEMENT ================= */
+
+      function addVideo() {
+        videoData.push({
+          thumbnail: "",
+          link: "",
+          status: "available",
+          download: 0,
+        });
+
+        save();
+      }
+
+      function deleteVideo(i) {
+        videoData.splice(i, 1);
+        save();
+      }
+
+      function uploadThumb(e, i) {
+        let file = e.target.files[0];
+
+        let reader = new FileReader();
+
+        reader.onload = function (ev) {
+          videoData[i].thumbnail = ev.target.result;
+          videoData[i].status = "available";
+
+          save();
+        };
+
+        reader.readAsDataURL(file);
+      }
+
+      function saveLink(i) {
+        let link = document.getElementById("link" + i).value;
+
+        videoData[i].link = btoa(link);
+
+        videoData[i].status = "available";
+
+        save();
+      }
+
+      /* ================= DOWNLOAD SYSTEM ================= */
+
+      let currentIndex = null;
+
+      function openPopup(i) {
+        if (videoData[i].status === "expired") {
+          alert("Video sudah kadaluarsa");
+          return;
+        }
+
+        currentIndex = i;
+
+        document.getElementById("popup").style.display = "flex";
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+
+      function goDownload() {
+        let encoded = videoData[currentIndex].link;
+
+        if (!encoded) {
+          alert("Link belum tersedia");
+          return;
+        }
+
+        let link = atob(encoded);
+
+        window.open(link, "_blank");
+
+        videoData[currentIndex].download++;
+
+        videoData[currentIndex].status = "expired";
+
+        save();
+
+        closePopup();
+      }
+
+      /* ================= IMPORT EXPORT ================= */
+
+      function exportData() {
+        let data = JSON.stringify(videoData);
+
+        let blob = new Blob([data], { type: "application/json" });
+
+        let a = document.createElement("a");
+
+        a.href = URL.createObjectURL(blob);
+
+        a.download = "gallery-backup.json";
+
+        a.click();
+      }
+
+      function importData(e) {
+        let file = e.target.files[0];
+
+        let reader = new FileReader();
+
+        reader.onload = function (ev) {
+          videoData = JSON.parse(ev.target.result);
+
+          save();
+        };
+
+        reader.readAsText(file);
+      }
+
+      /* ================= INIT ================= */
+
+      render();
+      renderStats();
+
+      if (isAdmin) {
+        document.getElementById("adminPanel").style.display = "block";
+        renderAdmin();
+      }
+    </script>
+    <!-- ANTI INSPECT -->
+     <script>
+
+/* ===============================
+ANTI RIGHT CLICK
+=============================== */
+document.addEventListener("contextmenu", function(e){
+  e.preventDefault();
+});
+
+/* ===============================
+ANTI SELECT TEXT
+=============================== */
+document.addEventListener("selectstart", function(e){
+  e.preventDefault();
+});
+
+/* ===============================
+ANTI COPY
+=============================== */
+document.addEventListener("copy", function(e){
+  e.preventDefault();
+});
+
+/* ===============================
+BLOCK KEY SHORTCUT
+=============================== */
+document.addEventListener("keydown", function(e){
+
+  if (e.key === "F12") {
+    e.preventDefault();
+  }
+
+  if (e.ctrlKey && e.shiftKey && e.key === "I") {
+    e.preventDefault();
+  }
+
+  if (e.ctrlKey && e.shiftKey && e.key === "J") {
+    e.preventDefault();
+  }
+
+  if (e.ctrlKey && e.shiftKey && e.key === "C") {
+    e.preventDefault();
+  }
+
+  if (e.ctrlKey && e.key === "U") {
+    e.preventDefault();
+  }
+
+  if (e.ctrlKey && e.key === "S") {
+    e.preventDefault();
+  }
+
+});
+
+/* ===============================
+ANTI DEVTOOLS
+=============================== */
+(function(){
+
+  const threshold = 160;
+
+  setInterval(function(){
+
+    if (
+      window.outerWidth - window.innerWidth > threshold ||
+      window.outerHeight - window.innerHeight > threshold
+    ){
+
+      document.body.innerHTML = `
+      <div style="
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      background:#000;
+      color:#fff;
+      font-family:sans-serif;
+      text-align:center;
+      padding:30px;
+      ">
+      <div>
+      <h2>⚠️ Akses Ditolak</h2>
+      <p>Developer Tools tidak diperbolehkan pada halaman ini.</p>
+      </div>
+      </div>
+      `;
+
+    }
+
+  },1000);
+
+})();
+
+/* ===============================
+CLEAR CONSOLE
+=============================== */
+setInterval(function(){
+  console.clear();
+},1000);
+
+</script>
+  </body>
+</html>
