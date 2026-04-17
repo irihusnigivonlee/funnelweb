@@ -1,24 +1,14 @@
 [
   {
-    "id": 1776311879772,
-    "title": "Panduan Fb Pro (FB Pro Mastery)",
-    "desc": "Panduan Lengkap membangun personal branding dari nol",
-    "category": "Bisnis",
-    "website": "http://localhost:5000/ebooks.html",
-    "linkvertise": "https://direct-link.net/1314520/OWcLZ4Mny5cR",
-    "downloads": 5,
-    "file": "1776311879625-FB Pro Growth System.pdf",
-    "cover": "1776311879759-cover2.png"
+    "title": "Panduan FB Pro",
+    "thumbnail": "/uploads/ebook1.jpg"
   },
   {
-    "id": 1776349690466,
-    "title": "Konten menjadi sumber cuan",
-    "desc": "Strate",
-    "category": "Bisnis",
-    "website": "http://localhost:5000/ebooks.html",
-    "linkvertise": "https://direct-link.net/1314520/OWcLZ4Mny5cR",
-    "downloads": 1,
-    "file": "1776349690308-FB Pro Growth System.pdf",
-    "cover": "1776349690458-cover8.png"
+    "title": "Konten Jadi Cuan",
+    "thumbnail": "/uploads/ebook2.jpg"
+  },
+  {
+    "title": "Strategi FB Pro",
+    "thumbnail": "/uploads/ebook3.jpg"
   }
 ]

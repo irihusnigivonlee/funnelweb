@@ -2447,5 +2447,32 @@ AUTO LOGOUT JIKA IDLE
 
       loadSliderEbooks();
     </script>
+    <script>
+async function loadSlider(){
+
+  const res = await fetch("/ebooks.json");
+  const ebooks = await res.json();
+
+  const slider = document.getElementById("ebookSlider");
+
+  slider.innerHTML = "";
+
+  ebooks.forEach(book => {
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${book.thumbnail}" alt="${book.title}">
+    `;
+
+    slider.appendChild(card);
+
+  });
+
+}
+
+loadSlider();
+</script>
   </body>
 </html>
