@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+
+<title>Creator FunnelWeb</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+padding:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1e293b;
+border-radius:10px;
+overflow:hidden;
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.card-body{
+padding:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 id="creatorName"></h1>
+
+<div class="grid" id="creatorContent"></div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search)
+
+const creator = params.get("name")
+
+document.getElementById("creatorName").innerText = "Creator: " + creator
+
+
+Promise.all([
+fetch("/videos").then(r=>r.json()),
+fetch("/ebooks").then(r=>r.json())
+])
+
+.then(([videos,ebooks])=>{
+
+const all = [...videos, ...ebooks]
+
+const creatorItems = all.filter(item => item.creator === creator)
+
+let html = ""
+
+creatorItems.forEach(item=>{
+
+let image = item.thumb ? item.thumb : "/uploads/cover/"+item.cover
+
+html += `
+
+<div class="card">
+
+<img src="${image}">
+
+<div class="card-body">
+
+<h3>${item.title}</h3>
+
+<a href="/content.html?id=${item.id}">
+<button>Lihat Konten</button>
+</a>
+
+</div>
+
+</div>
+
+`
+
+})
+
+document.getElementById("creatorContent").innerHTML = html
+
+})
+
+</script>
+
+</body>
+</html>

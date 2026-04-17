@@ -1,0 +1,2444 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FunnelWeb | Landing Page Premium</title>
+    <meta
+      name="description"
+      content="Landing page premium eBook FB Pro Engagement untuk creator, seller, dan affiliate yang ingin meningkatkan engagement Facebook Pro."
+    />
+    <meta name="theme-color" content="#0b0b0b" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #070707;
+        --bg2: #111111;
+        --card: #161616;
+        --card2: #1c1c1c;
+        --line: rgba(255, 255, 255, 0.08);
+        --txt: #f5f5f5;
+        --muted: #b8b8b8;
+        --gold: #c7a06a;
+        --gold2: #e7c38c;
+        --orange: #ff8c42;
+        --green: #22c55e;
+        --grad: linear-gradient(135deg, #c7a06a, #ff8c42);
+        --grad2: linear-gradient(135deg, #e7c38c, #c7a06a, #ff8c42);
+        --shadow: 0 30px 90px rgba(0, 0, 0, 0.48);
+        --shadow2: 0 18px 44px rgba(0, 0, 0, 0.28);
+        --radius: 30px;
+        --radius-sm: 20px;
+
+        /* Dynamic image vars (editable by admin) */
+        --hero-cover: url("assets/ebookcoveralmaira.png");
+        --flip-cover: url("assets/coveralmaira.png");
+        --flip-page-1: url("assets/2.png");
+        --flip-page-2: url("assets/4.png");
+        --flip-page-3: url("assets/16.png");
+        --flip-page-4: url("assets/page4.png");
+        --flip-page-5: url("assets/page5.png");
+        --flip-page-6: url("assets/page6.png");
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Inter, sans-serif;
+        background:
+          radial-gradient(
+            circle at top left,
+            rgba(199, 160, 106, 0.1),
+            transparent 18%
+          ),
+          radial-gradient(
+            circle at top right,
+            rgba(255, 140, 66, 0.08),
+            transparent 16%
+          ),
+          linear-gradient(to bottom, #080808, #101010, #151515);
+        color: var(--txt);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .container {
+        width: min(1140px, 92%);
+        margin: auto;
+      }
+      .section {
+        padding: 86px 0;
+      }
+      .hide {
+        display: none !important;
+      }
+
+      /* Topbar */
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        background: rgba(10, 10, 10, 0.78);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--line);
+      }
+      .topbar-inner {
+        width: min(1140px, 92%);
+        margin: auto;
+        padding: 14px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+      .topbar strong {
+        color: var(--gold2);
+      }
+      .countdown {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .timebox {
+        min-width: 64px;
+        padding: 10px 12px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--line);
+        text-align: center;
+        box-shadow: var(--shadow2);
+      }
+      .timebox b {
+        display: block;
+        font-size: 1.15rem;
+        color: #fff;
+      }
+      .timebox span {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      /* Generic */
+      .badge {
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(199, 160, 106, 0.12);
+        border: 1px solid rgba(199, 160, 106, 0.22);
+        color: var(--gold2);
+        font-weight: 800;
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+      }
+
+      .btn,
+      .btn-outline,
+      .btn-mini {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        transition: 0.3s ease;
+        font-weight: 900;
+      }
+      .btn {
+        padding: 16px 28px;
+        border-radius: 18px;
+        background: var(--grad);
+        color: #111;
+        box-shadow: 0 18px 40px rgba(199, 160, 106, 0.18);
+      }
+      .btn:hover {
+        transform: translateY(-4px) scale(1.02);
+        filter: brightness(1.05);
+      }
+      .btn-outline {
+        padding: 16px 28px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.03);
+        color: #fff;
+        border: 1px solid var(--line);
+      }
+      .btn-outline:hover {
+        transform: translateY(-4px);
+        border-color: rgba(199, 160, 106, 0.22);
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .btn-mini {
+        padding: 11px 16px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        border: 1px solid var(--line);
+        font-size: 0.9rem;
+      }
+      .btn-mini:hover {
+        transform: translateY(-2px);
+      }
+      .pulse-cta {
+        animation: pulseCta 2.2s ease-in-out infinite;
+      }
+      @keyframes pulseCta {
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 18px 40px rgba(199, 160, 106, 0.18);
+        }
+        50% {
+          transform: scale(1.03);
+          box-shadow: 0 22px 48px rgba(255, 140, 66, 0.24);
+        }
+      }
+
+      /* Hero */
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 64px 0 34px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        width: 440px;
+        height: 440px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(227, 191, 136, 0.22),
+          transparent 65%
+        );
+        top: 6%;
+        left: -6%;
+        filter: blur(20px);
+        animation: floatGlow 7s ease-in-out infinite;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 140, 66, 0.16),
+          transparent 65%
+        );
+        bottom: 8%;
+        right: -4%;
+        filter: blur(18px);
+        animation: floatGlow 8s ease-in-out infinite reverse;
+      }
+      @keyframes floatGlow {
+        0%,
+        100% {
+          transform: translateY(0) translateX(0);
+        }
+        50% {
+          transform: translateY(-18px) translateX(12px);
+        }
+      }
+
+      .hero-wrap {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        max-width: 980px;
+        margin: auto;
+      }
+
+      .cover-wrap {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 30px;
+      }
+      .cover-glow {
+        position: absolute;
+        inset: -18px;
+        border-radius: 34px;
+        background:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.28),
+            transparent 20%
+          ),
+          linear-gradient(
+            135deg,
+            rgba(199, 160, 106, 0.24),
+            rgba(255, 140, 66, 0.18),
+            rgba(255, 255, 255, 0.04)
+          );
+        filter: blur(10px);
+        animation: pulse 3.6s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.72;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.03);
+        }
+      }
+
+      .cover {
+        position: relative;
+        width: min(370px, 84vw);
+        aspect-ratio: 3/4;
+        border-radius: 30px;
+        overflow: hidden;
+        background:
+          linear-gradient(145deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.18)),
+          var(--hero-cover) center/cover no-repeat;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        box-shadow: var(--shadow);
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        padding: 28px;
+        text-align: left;
+      }
+      .cover::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at top left,
+            rgba(199, 160, 106, 0.28),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at bottom right,
+            rgba(255, 140, 66, 0.18),
+            transparent 26%
+          ),
+          linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.14));
+      }
+      .cover-content {
+        position: relative;
+        z-index: 3;
+      }
+      .shine {
+        position: absolute;
+        top: -20%;
+        left: -35%;
+        width: 45%;
+        height: 150%;
+        background: linear-gradient(
+          115deg,
+          transparent,
+          rgba(255, 255, 255, 0.45),
+          transparent
+        );
+        transform: rotate(12deg);
+        animation: shine 4.2s linear infinite;
+        filter: blur(2px);
+        z-index: 2;
+      }
+      @keyframes shine {
+        0% {
+          left: -40%;
+        }
+        100% {
+          left: 130%;
+        }
+      }
+
+      h1 {
+        font-size: clamp(2.35rem, 5vw, 4.8rem);
+        line-height: 1.05;
+        font-weight: 900;
+        letter-spacing: -1.5px;
+        margin-bottom: 18px;
+      }
+      h1 span {
+        background: linear-gradient(90deg, #fff, var(--gold2), var(--orange));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .lead {
+        max-width: 780px;
+        margin: 0 auto 26px;
+        color: #d5d5d5;
+        font-size: 1.06rem;
+      }
+      .hero-cta {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+
+      /* Trust strip */
+      .trust-strip {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        padding: 18px 22px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--line);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+      }
+      .trust-strip span {
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        font-weight: 700;
+        color: #e6e6e6;
+        font-size: 0.95rem;
+      }
+
+      /* Flipbook */
+      .flip-book {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        align-items: center;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0.02)
+        );
+        border: 1px solid var(--line);
+        border-radius: 34px;
+        padding: 34px;
+        box-shadow: var(--shadow2);
+      }
+
+      .book-scene {
+        perspective: 2200px;
+        display: grid;
+        place-items: center;
+        min-height: 480px;
+      }
+
+      .book {
+        width: 320px;
+        height: 400px;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: bookFloat 5.5s ease-in-out infinite;
+      }
+      @keyframes bookFloat {
+        0%,
+        100% {
+          transform: rotateY(-18deg) rotateX(4deg) translateY(0);
+        }
+        50% {
+          transform: rotateY(-8deg) rotateX(1deg) translateY(-12px);
+        }
+      }
+
+      .cover-back,
+      .cover-front,
+      .page-sheet {
+        position: absolute;
+        inset: 0;
+        transform-origin: left center;
+        transform-style: preserve-3d;
+        border-radius: 18px;
+      }
+
+      .cover-back {
+        background: linear-gradient(145deg, #111, #191919);
+        transform: translateZ(-22px) rotateY(180deg);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .page-sheet {
+        animation: sheetFlip 9s ease-in-out infinite;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+      }
+      .page-sheet:nth-child(2) {
+        animation-delay: 0s;
+        z-index: 7;
+      }
+      .page-sheet:nth-child(3) {
+        animation-delay: 1s;
+        z-index: 6;
+      }
+      .page-sheet:nth-child(4) {
+        animation-delay: 2s;
+        z-index: 5;
+      }
+      .page-sheet:nth-child(5) {
+        animation-delay: 3s;
+        z-index: 4;
+      }
+      .page-sheet:nth-child(6) {
+        animation-delay: 4s;
+        z-index: 3;
+      }
+      .page-sheet:nth-child(7) {
+        animation-delay: 5s;
+        z-index: 2;
+      }
+
+      .page-front,
+      .page-back {
+        position: absolute;
+        inset: 8px;
+        border-radius: 14px;
+        backface-visibility: hidden;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .page-front {
+        background-color: #f5efe7;
+      }
+      .page-back {
+        transform: rotateY(180deg);
+        background-color: #f0e5d6;
+      }
+
+      @keyframes sheetFlip {
+        0%,
+        10% {
+          transform: rotateY(0deg);
+        }
+        22%,
+        55% {
+          transform: rotateY(-165deg);
+        }
+        100% {
+          transform: rotateY(0deg);
+        }
+      }
+
+      .sheet-1 .page-front {
+        background-image: var(--flip-page-1);
+      }
+      .sheet-1 .page-back {
+        background-image: var(--flip-page-2);
+      }
+      .sheet-2 .page-front {
+        background-image: var(--flip-page-2);
+      }
+      .sheet-2 .page-back {
+        background-image: var(--flip-page-3);
+      }
+      .sheet-3 .page-front {
+        background-image: var(--flip-page-3);
+      }
+      .sheet-3 .page-back {
+        background-image: var(--flip-page-4);
+      }
+      .sheet-4 .page-front {
+        background-image: var(--flip-page-4);
+      }
+      .sheet-4 .page-back {
+        background-image: var(--flip-page-5);
+      }
+      .sheet-5 .page-front {
+        background-image: var(--flip-page-5);
+      }
+      .sheet-5 .page-back {
+        background-image: var(--flip-page-6);
+      }
+      .sheet-6 .page-front {
+        background-image: var(--flip-page-6);
+      }
+      .sheet-6 .page-back {
+        background-image: var(--flip-page-1);
+      }
+
+      .cover-front {
+        background:
+          linear-gradient(145deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.14)),
+          var(--flip-cover) center/cover no-repeat;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+        padding: 22px;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        z-index: 9;
+        animation: coverPulse 5s ease-in-out infinite;
+      }
+      .cover-front::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 18px;
+        background:
+          radial-gradient(
+            circle at top left,
+            rgba(199, 160, 106, 0.25),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at bottom right,
+            rgba(255, 140, 66, 0.18),
+            transparent 26%
+          ),
+          linear-gradient(to top, rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.12));
+      }
+      @keyframes coverPulse {
+        0%,
+        100% {
+          transform: translateZ(0);
+        }
+        50% {
+          transform: translateZ(8px);
+        }
+      }
+
+      .book-copy h2 {
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        margin-bottom: 12px;
+        color: #070707;
+        -webkit-text-stroke: 1px;
+        -webkit-text-stroke-color: rgb(255, 238, 0) 1px;
+      }
+      .book-copy p {
+        color: blue;
+        font-weight: bolder;
+        -webkit-text-stroke-color: 1px black;
+        margin-bottom: 20px;
+      }
+
+      /* CARD */
+      .proof-grid,
+      .faq-grid,
+      .who-grid,
+      .testi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      .point,
+      .proof-card,
+      .faq-item,
+      .who-card,
+      .price-card,
+      .bonus-card,
+      .mini-card,
+      .testi-card,
+      .closing-box {
+        padding: 22px;
+        border-radius: 24px;
+        background: rgba(9, 7, 7, 0.542);
+        border: 1px solid var(--line);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.59);
+      }
+      .point strong {
+        display: block;
+        color: var(--gold2);
+        margin-bottom: 4px;
+      }
+      .points,
+      .list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .section-title {
+        text-align: center;
+        max-width: 780px;
+        margin: 0 auto 42px;
+      }
+      .section-title h2 {
+        font-size: clamp(1.95rem, 4vw, 3rem);
+        margin-bottom: 14px;
+      }
+      .section-title p {
+        color: var(--muted);
+      }
+
+      .pricing {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .new-price {
+        font-size: 2.7rem;
+        font-weight: 900;
+        color: var(--gold2);
+        line-height: 1.1;
+        margin: 8px 0;
+      }
+
+      .card-center {
+        text-align: center;
+        max-width: 940px;
+        margin: auto;
+        padding: 34px;
+        border-radius: 32px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0.02)
+        );
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow2);
+      }
+
+      .double-cta {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .testi-card h4 {
+        margin-bottom: 8px;
+      }
+      .testi-card p {
+        color: var(--muted);
+      }
+
+      .marquee {
+        overflow: hidden;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.02);
+        padding: 18px 0;
+        margin-top: 10px;
+      }
+      .marquee-track {
+        display: flex;
+        gap: 40px;
+        white-space: nowrap;
+        animation: marquee 24s linear infinite;
+        font-weight: 800;
+        color: var(--gold2);
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      footer {
+        padding: 34px 20px 110px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .floating-chat {
+        position: fixed;
+        right: 20px;
+        bottom: 22px;
+        z-index: 999;
+        background: linear-gradient(135deg, #22c55e, #16a34a);
+        color: #fff;
+        padding: 15px 20px;
+        border-radius: 999px;
+        font-weight: 800;
+        box-shadow: 0 18px 40px rgba(34, 197, 94, 0.26);
+        transition: 0.3s ease;
+      }
+      .floating-chat:hover {
+        transform: translateY(-4px) scale(1.03);
+      }
+
+      /* ADMIN */
+      .admin-trigger {
+        position: fixed;
+        left: 16px;
+        bottom: 18px;
+        z-index: 1000;
+        width: 52px;
+        height: 52px;
+        border-radius: 18px;
+        display: grid;
+        place-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--line);
+        color: #fff;
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow2);
+        font-size: 1.25rem;
+      }
+
+      .admin-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(6px);
+        z-index: 1200;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+      }
+      .admin-overlay.show {
+        display: flex;
+      }
+
+      .admin-panel {
+        width: min(1100px, 100%);
+        max-height: 92vh;
+        overflow: auto;
+        border-radius: 28px;
+        background: linear-gradient(180deg, #121212, #0d0d0d);
+        border: 1px solid var(--line);
+        box-shadow: 0 30px 100px rgba(0, 0, 0, 0.55);
+        padding: 24px;
+      }
+
+      .admin-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .admin-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 20px;
+      }
+
+      .admin-box {
+        padding: 20px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--line);
+      }
+
+      .admin-box h3 {
+        margin-bottom: 14px;
+        font-size: 1.1rem;
+      }
+
+      .field {
+        margin-bottom: 14px;
+      }
+
+      .field label {
+        display: block;
+        font-size: 0.92rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: #e9e9e9;
+      }
+
+      .field input,
+      .field textarea {
+        width: 100%;
+        padding: 14px 14px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.04);
+        color: #fff;
+        outline: none;
+        font-family: inherit;
+      }
+      .field textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+      .field input[type="file"] {
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .admin-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      .preview-thumb {
+        width: 100%;
+        aspect-ratio: 3/4;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: #111 center/cover no-repeat;
+        margin-top: 10px;
+      }
+
+      .login-box {
+        width: min(420px, 100%);
+        padding: 28px;
+        border-radius: 28px;
+        background: linear-gradient(180deg, #121212, #0d0d0d);
+        border: 1px solid var(--line);
+        box-shadow: 0 30px 100px rgba(0, 0, 0, 0.55);
+      }
+
+      .import-area {
+        width: 100%;
+        min-height: 160px;
+        margin-top: 12px;
+      }
+
+      @media (max-width: 980px) {
+        .flip-book,
+        .pricing,
+        .proof-grid,
+        .faq-grid,
+        .who-grid,
+        .testi-grid,
+        .admin-grid {
+          grid-template-columns: 1fr;
+        }
+        .book {
+          width: 280px;
+          height: 360px;
+        }
+        .section {
+          padding: 72px 0;
+        }
+        .topbar-inner {
+          justify-content: center;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero-cta,
+        .double-cta,
+        .admin-actions {
+          flex-direction: column;
+        }
+        .btn,
+        .btn-outline,
+        .floating-chat,
+        .btn-mini {
+          width: 100%;
+        }
+        .floating-chat {
+          left: 16px;
+          right: 16px;
+          bottom: 16px;
+          text-align: center;
+        }
+        .admin-trigger {
+          left: 16px;
+          bottom: 86px;
+        }
+      }
+
+      /* ANTI HIGHLIGHT TEKS */
+      img {
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .slider-section {
+        overflow: hidden;
+        padding: 2px 0;
+      }
+
+      .slider-title {
+        text-align: center;
+        font-size: 22px;
+        color: white;
+        -webkit-text-stroke: rgba(255, 0, 0, 0.392);
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+
+      .slider {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
+
+      .slide-track {
+        display: flex;
+        width: max-content;
+        animation: scroll 20s linear infinite;
+      }
+
+      .card {
+        width: 200px;
+        min-width: 200px;
+        margin: 0 10px;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      /* ANIMASI MARQUEE */
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* HOVER PAUSE (BIAR KEREN) */
+      .slider:hover .slide-track {
+        animation-play-state: paused;
+      }
+
+      /* RESPONSIVE HP */
+      @media (max-width: 768px) {
+        .card {
+          width: 140px;
+          min-width: 140px;
+        }
+
+        .card img {
+          height: 200px;
+        }
+      }
+
+      /* DOWNLOAD BLINK */
+      .btn-blink {
+        padding: 15px 30px;
+        font-size: 18px;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        animation: blinkSmooth 1.8s infinite;
+      }
+
+      @keyframes blinkSmooth {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div>
+          <strong
+            >Almaira<span style="font-style: italic; color: var(--orange)"
+              >Olstore</span
+            ><br
+          /></strong>
+          <span id="promoText"
+            >Buka eBook
+            <a
+              href="http://localhost:5000/"
+              ;
+              style="color: blue; font-weight: bolder"
+              >Funnel<span style="font-style: italic; color: orange"
+                >Web</span
+              ></a
+            >
+            dan Pelajari strategi monetisasinya</span
+          >
+        </div>
+        <div class="countdown">
+          <div class="timebox"><b id="days">00</b><span>Hari</span></div>
+          <div class="timebox"><b id="hours">00</b><span>Jam</span></div>
+          <div class="timebox"><b id="minutes">00</b><span>Menit</span></div>
+          <div class="timebox"><b id="seconds">00</b><span>Detik</span></div>
+        </div>
+      </div>
+    </div>
+    <section class="slider-section">
+      <div class="slider-title">
+        Koleksi eBook Siap di download <br />gratis di
+        <a
+          class="btn-blink"
+          href="http://localhost:5000/"
+          ;
+          style="color: blue; font-weight: bolder; font-size: 25px"
+          >Funnel<span style="font-style: italic; color: orange">Web🚀</span></a
+        >
+      </div>
+
+      <div class="slider">
+        <div class="slide-track" id="ebookSlider"></div>
+      </div>
+    </section>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div class="cover-wrap">
+          <div class="cover-glow"></div>
+          <div class="cover">
+            <div class="shine"></div>
+            <div class="cover-content">
+              <span class="badge" id="brandBadge">Almaira Olstore</span>
+              <h2
+                id="coverMiniTitle"
+                style="font-size: 2rem; line-height: 1.1; font-weight: 900"
+              >
+                FB Pro Engagement<br />
+                <span style="color: var(--gold2)">Panduan Praktis Creator</span>
+              </h2>
+              <p
+                id="coverMiniDesc"
+                style="margin-top: 10px; color: #d0d0d0; max-width: 270px"
+              >
+                Strategi konten sederhana agar postingan lebih ramai, lebih
+                aktif, dan lebih menarik di mata audiens.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <span class="badge" id="brandName">Almaira Olstore</span>
+
+        <div style="margin: 20px 0; text-align: center">
+          <button
+            id="btnDownload"
+            class="btn-blink"
+            class="btn btn-outline"
+            style="background-color: green"
+          >
+            Cara Download Gratis
+          </button>
+        </div>
+
+        <h1 id="heroTitle">
+          Rahasia <span>Meningkatkan Engagement FB Pro</span><br />
+          Agar Postingan Lebih Ramai dan Lebih Aktif
+        </h1>
+        <p class="lead" id="heroDesc">
+          Pelajari pola konten, cara mendatangkan interaksi, dan strategi jitu
+          agar postingan FB Pro lebih sering mendapat like, komentar, share, dan
+          kunjungan audiens.
+        </p>
+
+        <div class="hero-cta">
+          <a
+            class="btn pulse-cta cta-main"
+            id="mainCta1"
+            href="https://link-hijau.linkvertise.com/"
+            target="_blank"
+            >Buka Akses Materi</a
+          >
+          <a class="btn-outline" href="#flipbook">Preview Materi</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section style="padding: 0 0 30px">
+      <div class="container">
+        <div class="trust-strip">
+          <span>✔ Mudah Dipahami</span>
+          <span>✔ Cocok untuk Pemula</span>
+          <span>✔ Bisa Dipraktikkan Langsung</span>
+          <span>✔ Akses Digital</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLIPBOOK -->
+    <section class="section" id="flipbook">
+      <div
+        class="container flip-book"
+        style="background-image: url(img/jati.jpg)"
+      >
+        <div class="book-scene">
+          <div class="book">
+            <div class="cover-back"></div>
+
+            <div class="page-sheet sheet-1">
+              <div class="page-front"></div>
+              <div class="page-back"></div>
+            </div>
+            <div class="page-sheet sheet-2">
+              <div class="page-front"></div>
+              <div class="page-back"></div>
+            </div>
+            <div class="page-sheet sheet-3">
+              <div class="page-front"></div>
+              <div class="page-back"></div>
+            </div>
+            <div class="page-sheet sheet-4">
+              <div class="page-front"></div>
+              <div class="page-back"></div>
+            </div>
+            <div class="page-sheet sheet-5">
+              <div class="page-front"></div>
+              <div class="page-back"></div>
+            </div>
+            <div class="page-sheet sheet-6">
+              <div class="page-front"></div>
+              <div class="page-back"></div>
+            </div>
+
+            <div class="cover-front">
+              <div style="position: relative; z-index: 2">
+                <span class="badge">Preview Isi</span>
+                <h3
+                  id="flipTitle"
+                  style="font-size: 1.6rem; line-height: 1.2; color: black"
+                >
+                  Strategi Konten FB Pro yang Membuat Audiens Lebih Sering
+                  Berinteraksi menjadikan konten tak pernah sepi
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-copy">
+          <h2>Facebook Profeional Growth System</h2>
+          <p>
+            Jenuh dengan terlalu banyaknya membuat konten, view banyak interaksi
+            sepi. ajakan SKSD para suhu datang dari mana-mana akhirnya jadi
+            sibuk sendiri ngelike, follow bahkan ngeshare konten suhu tersebut.
+            Tapi apa yang didapat malahan konten sendiri tetap saja sepi,
+            boro-boro para suhu mau follow balik.
+          </p>
+          <div class="points">
+            <div class="point">
+              <strong>Jadilah Konten Creator yang berdedikasi</strong>
+              Konten Creator berdedikasi adalah seseorang yang membuat konten
+              (video, foto, tulisan, dll) dengan konsisten, serius, dan punya
+              tujuan jelas, bukan sekadar ikut-ikutan atau iseng.
+            </div>
+            <div class="point">
+              <strong>Konten Creator dengan Niche yang jelas </strong>
+              Punya fokus topik tertentu yang konsisten di semua konten. Seorang
+              Konten Creator akan menciptakan hal yang dapat memberikan manfaat
+              bagi diri sendiri maupun orang lain, sehingga dengan begitu
+              Creator akan hadir sebagai pengembang minat dan tujuaan semua
+              orang, walhasil disitulah orang-orang akan berbondong-bondong
+              mengikutinya.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFIT -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <span class="badge">Yang Akan Dipelajari</span>
+          <h2>
+            Isi Materi yang Lebih Mudah Dipahami dan Lebih Siap Dipraktikkan
+          </h2>
+          <p>
+            Materi disusun agar tidak terasa membingungkan dan lebih mudah
+            diterapkan untuk meningkatkan performa interaksi konten secara
+            bertahap, karena pada prinsipnya tak ada yang serba instan semua
+            akan berjalan dengan alami dan metode keseimbangan.
+          </p>
+        </div>
+
+        <div class="proof-grid">
+          <div class="proof-card">
+            <h3>Strategi Konten dan trik-triknya</h3>
+            <p style="color: var(--muted)">
+              Pelajari pola posting yang lebih berpotensi memancing like,
+              komentar, dan share.jangan dulu memikirkan cuan, percayalah ini
+              datang dipenghujung metode dan usaha yang berjalan, yang perlu
+              dipikirkan bagaimana interaksi itu datang.
+            </p>
+          </div>
+          <div class="proof-card">
+            <h3>Hook Pembuka yang Menarik</h3>
+            <p style="color: var(--muted)">
+              Tips menggunakan pembuka konten yang lebih kuat agar audiens
+              tertarik berhenti dan membaca. <br />Nah inilah yang akan menjadi
+              acuan dalam dunia perkontentan, ikuti dan pelajari cara
+              penerapannya bukan cuma hanya mengerti dan sekedar tahu saja.
+            </p>
+          </div>
+          <div class="proof-card">
+            <h3>CTA yang Memancing Interaksi</h3>
+            <p style="color: var(--muted)">
+              Pahami cara mengajak audiens berinteraksi tanpa terasa memaksa
+              atau kaku, dan perlu diingat bahwa
+              <a
+                href="http://localhost:5000/"
+                ;
+                style="color: blue; font-weight: bolder"
+              >
+                Funnel<span style="font-style: italic; color: orange"
+                  >Web</span
+                ></a
+              >
+              akan benar-benar mengajak audiens bisa bergabung dan mengembangkan
+              kontennya secara berkesinambungan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="card-center">
+          <span class="badge">Akses Materi Eksklusif</span>
+          <!-- Tombol Cara Download -->
+
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin: 14px 0">
+            Materi khusus
+            <a
+              href="http://localhost:5000/"
+              ;
+              style="color: blue; font-weight: bolder"
+            >
+              Funnel<span style="font-style: italic; color: orange"
+                >Web</span
+              ></a
+            >
+            <br />membuat konten sebagai <br />sumber penghasilan
+          </h2>
+          <p style="color: var(--muted); max-width: 720px; margin: 0 auto 24px">
+            Klik tombol di bawah untuk mendapatkan panduan. Sebelumnya audiens
+            akan diarahkan ke halaman monetisasi terlebih dahulu sebelum masuk
+            ke materi utama, dengan bergabung di tools ini anda dapat langsung
+            praktik menjadikan konten sebagai sumber penghasilan setiap hari.
+          </p>
+
+          <div class="double-cta">
+            <a
+              class="btn pulse-cta cta-main"
+              id="mainCta2"
+              href="https://link-hijau.linkvertise.com/"
+              target="_blank"
+            >
+              Buka Akses Materi
+            </a>
+            <a class="btn-outline" href="#bonus"> Lihat Benefit Dulu </a>
+          </div>
+
+          <!-- Popup Cara Download untuk menjelaskan langkah langkahnya-->
+          <div
+            id="popupDownload"
+            style="
+              display: none;
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.85);
+              z-index: 9999;
+              justify-content: center;
+              align-items: center;
+              padding: 20px;
+            "
+          >
+            <div
+              style="
+                background: #111;
+                border-radius: 24px;
+                max-width: 520px;
+                width: 95%;
+                max-height: 90vh;
+                display: flex;
+                flex-direction: column;
+                color: white;
+                overflow: hidden;
+              "
+            >
+              <!-- HEADER (tidak ikut scroll) -->
+              <div style="padding: 24px 24px 10px 24px; text-align: center">
+                <h2 style="margin-bottom: 12px">Cara Download eBook</h2>
+
+                <p style="line-height: 1.7; font-size: 15px">
+                  1. Klik <b>GetLink</b><br />
+                  2. Pilih <b>Watch Ads</b><br />
+                  3. Klik <b>Continue</b><br />
+                  4. Klik <span style="color: orange">Skip Ads</span> 3 iklan<br />
+                  5. Klik <b>Open</b> lalu Download
+                </p>
+              </div>
+
+              <!-- AREA GAMBAR (bisa discroll) -->
+              <div style="overflow-y: auto; padding: 10px 24px; flex: 1">
+                <img
+                  src="img/tipsDOWNLOAD.jpg"
+                  style="width: 100%; border-radius: 12px; margin-bottom: 14px"
+                />
+
+                <img
+                  src="img/tipsDOWNLOAD2.jpg"
+                  style="width: 100%; border-radius: 12px; margin-bottom: 14px"
+                />
+              </div>
+
+              <!-- FOOTER BUTTON -->
+              <div style="padding: 16px 24px 24px 24px; text-align: center">
+                <button id="closePopup" class="btn" style="margin: auto">
+                  Tutup
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- POPUP -->
+        </div>
+      </div>
+    </section>
+
+    <!-- BONUS -->
+    <section class="section" id="bonus">
+      <div class="container pricing">
+        <div class="price-card">
+          <span class="badge">Akses Gratis Materi</span>
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 10px">
+            Buka eBook + Materi Pendukung Pdf + Video Tutorial
+          </h2>
+          <p style="color: var(--muted)">
+            Versi ini dibuat untuk membantu kamu belajar lebih cepat tanpa
+            bingung harus mulai dari mana.
+          </p>
+
+          <div style="margin-top: 18px">
+            <div class="new-price">Gratis</div>
+            <div style="color: var(--muted)">
+              Akses digital • Bisa dipelajari kapan saja
+            </div>
+          </div>
+
+          <div class="double-cta">
+            <a
+              class="btn cta-main"
+              id="mainCta3"
+              href="https://link-hijau.linkvertise.com/"
+              target="_blank"
+              >Buka Akses Sekarang</a
+            >
+            <a class="btn-outline" href="http://localhost:5000/" target="_blank"
+              >Kunjungi Gallery</a
+            >
+          </div>
+        </div>
+
+        <div class="bonus-card">
+          <span class="badge">Bonus Akses</span>
+          <h3 style="font-size: 1.8rem; margin-bottom: 12px">
+            Yang Bisa Kamu Pelajari
+          </h3>
+          <div class="list">
+            <div>🎁 Ide caption pemancing komentar</div>
+            <div>🎁 Hook pembuka konten FB Pro</div>
+            <div>🎁 Pola posting agar akun lebih aktif</div>
+            <div>🎁 Format CTA untuk meningkatkan interaksi</div>
+            <div>🎁 Memanfaatkan tools rahasia peningkatan engagement</div>
+            <div>
+              🎁 Sistematika dunia perkontenan
+              <a
+                href="http://localhost:5000/"
+                ;
+                style="color: blue; font-weight: bolder"
+                >Funnel<span style="font-style: italic; color: orange"
+                  >Web</span
+                ></a
+              >
+              yang berkesinambungan
+            </div>
+            <div>🎁 Konten sebagai sumber penghasilan setiap saat</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <span class="badge">Siapa yang Cocok?</span>
+          <h2>eBook Ini Cocok untuk Kamu Jika...</h2>
+        </div>
+
+        <div class="who-grid">
+          <div class="who-card">
+            <h3>Creator Pemula</h3>
+            <p style="color: var(--muted)">
+              Yang ingin mulai serius membangun akun FB Pro agar lebih hidup dan
+              menarik.
+            </p>
+          </div>
+          <div class="who-card">
+            <h3>Seller & Affiliate</h3>
+            <p style="color: var(--muted)">
+              Yang ingin kontennya lebih sering dilihat, dikomentari, dan
+              membantu performa promosi.
+            </p>
+          </div>
+          <div class="who-card">
+            <h3>Personal Brand</h3>
+            <p style="color: var(--muted)">
+              Yang ingin tampil lebih aktif, lebih rapi, dan lebih kuat secara
+              branding di Facebook.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <span class="badge">FAQ Singkat</span>
+          <h2>Pertanyaan yang Sering Ditanyakan</h2>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Apakah ini cocok untuk pemula?</h3>
+            <p style="color: var(--muted)">
+              Ya, isi materi dibuat agar mudah dipahami bahkan untuk yang baru
+              mulai mengelola FB Pro.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Apakah akses materi ini gratis?</h3>
+            <p style="color: var(--muted)">
+              Ya, audiens dapat membuka akses materi secara gratis melalui
+              halaman yang telah disediakan.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Apakah bisa dipakai untuk konten jualan?</h3>
+            <p style="color: var(--muted)">
+              Bisa, karena strategi engagement yang baik juga sangat membantu
+              performa konten promosi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>• Premium eBook FB Pro Engagement</span>
+        <span>• Cocok untuk Creator FB Pro</span>
+        <span>• Strategi Konten Lebih Terarah</span>
+        <span>• Bantu Postingan Lebih Ramai</span>
+        <span>• Tingkatkan Like, Komentar & Share</span>
+        <span>• Premium eBook FB Pro Engagement</span>
+        <span>• Cocok untuk Creator FB Pro</span>
+        <span>• Strategi Konten Lebih Terarah</span>
+        <span>• Bantu Postingan Lebih Ramai</span>
+        <span>• Tingkatkan Like, Komentar & Share</span>
+      </div>
+    </div>
+
+    <footer>
+      © 2026 <span id="footerBrand">Almaira Olstore</span> <br />
+      eBook
+      <a
+        href="http://localhost:5000/"
+        ;
+        style="color: blue; font-weight: bolder"
+        >Funnel<span style="font-style: italic; color: orange">Web</span></a
+      >
+      untuk creator yang ingin meningkatkan interaksi,<br />
+      daya tarik konten maupun pertumbuhan akun secara lebih profesional dan
+      termonetisasi.
+    </footer>
+
+    <a
+      class="floating-chat"
+      id="btnFunnelFloat"
+      href="#"
+      style="
+        bottom: 80px;
+        background: linear-gradient(135deg, #ff8c42, #c7a06a);
+      "
+    >
+      ⚙️ FunnelWeb Bisnis
+    </a>
+
+    <a
+      class="floating-chat pulse-cta cta-main"
+      id="mainCtaFloat"
+      href="https://link-hijau.linkvertise.com/"
+      target="_blank"
+    >
+      🚀 Buka Materi
+    </a>
+
+    <!-- ADMIN BUTTON -->
+    <button class="admin-trigger" id="adminTrigger" title="Admin Panel">
+      ⚙️
+    </button>
+
+    <!-- LOGIN MODAL -->
+    <div class="admin-overlay" id="loginOverlay">
+      <div class="login-box">
+        <span class="badge">Admin Login</span>
+        <h2 style="margin-bottom: 12px">Masuk ke Mode Admin</h2>
+        <p style="color: var(--muted); margin-bottom: 18px">
+          Masukkan password untuk mengedit link, teks, dan gambar landing page.
+        </p>
+
+        <div class="field">
+          <label>Password Admin</label>
+          <input
+            type="password"
+            id="adminPasswordInput"
+            placeholder="Masukkan password admin"
+          />
+        </div>
+
+        <div class="admin-actions">
+          <button class="btn" id="loginAdminBtn">Masuk</button>
+          <button class="btn-outline" id="closeLoginBtn">Batal</button>
+        </div>
+
+        <p
+          id="loginMsg"
+          style="margin-top: 12px; color: #ff9f9f; font-size: 0.92rem"
+        ></p>
+      </div>
+    </div>
+
+    <!-- ADMIN PANEL -->
+    <div class="admin-overlay" id="adminOverlay">
+      <div class="admin-panel">
+        <div class="admin-head">
+          <div>
+            <span class="badge">OMEGA ADMIN PANEL</span>
+            <h2>FULL EDIT LANDING PAGE</h2>
+          </div>
+          <div class="admin-actions">
+            <button class="btn-mini" id="saveConfigBtn">💾 Save</button>
+            <button class="btn-mini" id="resetConfigBtn">♻ Reset</button>
+            <button class="btn-mini" id="exportConfigBtn">📤 Export</button>
+            <button class="btn-mini" id="logoutAdminBtn">🚪 Logout</button>
+            <button class="btn-mini" id="closeAdminBtn">✖ Tutup</button>
+          </div>
+        </div>
+
+        <div class="admin-grid">
+          <div class="admin-box">
+            <h3>Konten Utama</h3>
+
+            <div class="field">
+              <label>Nama Brand</label>
+              <input type="text" id="adminBrand" />
+            </div>
+
+            <div class="field">
+              <label>Judul Hero</label>
+              <textarea id="adminHeroTitle"></textarea>
+            </div>
+
+            <div class="field">
+              <label>Deskripsi Hero</label>
+              <textarea id="adminHeroDesc"></textarea>
+            </div>
+
+            <div class="field">
+              <label>Judul Mini Cover</label>
+              <textarea id="adminCoverMiniTitle"></textarea>
+            </div>
+
+            <div class="field">
+              <label>Deskripsi Mini Cover</label>
+              <textarea id="adminCoverMiniDesc"></textarea>
+            </div>
+
+            <div class="field">
+              <label>Judul Flip Preview</label>
+              <textarea id="adminFlipTitle"></textarea>
+            </div>
+
+            <div class="field">
+              <label>Text Promo Topbar</label>
+              <input type="text" id="adminPromoText" />
+            </div>
+
+            <div class="field">
+              <label>Text Tombol CTA Utama</label>
+              <input type="text" id="adminCtaText" />
+            </div>
+
+            <div class="field">
+              <label>Link Utama (Linkvertise / Landing / File)</label>
+              <input type="text" id="adminMainLink" />
+            </div>
+
+            <div class="field">
+              <label>Link WhatsApp</label>
+              <input type="text" id="adminWaLink" />
+            </div>
+          </div>
+
+          <div class="admin-box">
+            <h3>Gambar Landing Page</h3>
+
+            <div class="field">
+              <label>Hero Cover Image</label>
+              <input type="file" id="heroImageInput" accept="image/*" />
+              <div class="preview-thumb" id="heroPreview"></div>
+            </div>
+
+            <div class="field">
+              <label>Flip Cover Image</label>
+              <input type="file" id="flipCoverInput" accept="image/*" />
+              <div class="preview-thumb" id="flipCoverPreview"></div>
+            </div>
+
+            <div class="field">
+              <label>Flip Page 1</label>
+              <input type="file" id="flipPage1Input" accept="image/*" />
+            </div>
+
+            <div class="field">
+              <label>Flip Page 2</label>
+              <input type="file" id="flipPage2Input" accept="image/*" />
+            </div>
+
+            <div class="field">
+              <label>Flip Page 3</label>
+              <input type="file" id="flipPage3Input" accept="image/*" />
+            </div>
+
+            <div class="field">
+              <label>Flip Page 4</label>
+              <input type="file" id="flipPage4Input" accept="image/*" />
+            </div>
+
+            <div class="field">
+              <label>Flip Page 5</label>
+              <input type="file" id="flipPage5Input" accept="image/*" />
+            </div>
+
+            <div class="field">
+              <label>Flip Page 6</label>
+              <input type="file" id="flipPage6Input" accept="image/*" />
+            </div>
+
+            <div class="field">
+              <label>Import Config JSON</label>
+              <textarea
+                id="importArea"
+                class="import-area"
+                placeholder="Paste config JSON di sini..."
+              ></textarea>
+            </div>
+
+            <div class="admin-actions">
+              <button class="btn-mini" id="importConfigBtn">📥 Import</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup floating -->
+    <div
+      id="popupFunnel"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      "
+    >
+      <div
+        style="
+          background: #111;
+          border-radius: 24px;
+          max-width: 420px;
+          width: 90%;
+          padding: 28px;
+          text-align: center;
+        "
+      >
+        <h2>
+          ⚙️ Setting
+          <a
+            href="http://localhost:5000/"
+            ;
+            style="color: blue; font-weight: bolder"
+            >Funnel<span style="font-style: italic; color: orange">Web</span></a
+          >
+        </h2>
+
+        <p style="color: #ccc; margin-top: 10px">
+          Download dulu eBook.<br /><br />
+          Panduan Setting Bisnis
+          <a
+            href="http://localhost:5000/"
+            ;
+            style="color: blue; font-weight: bolder"
+            >Funnel<span style="font-style: italic; color: orange">Web</span></a
+          >
+          Fbpro untuk <br />anda tersedia pada Bab ebook dilengkapi link panduan
+          video cara kerjanya<br />Raih penghasilan 10-100 Dollar perhari
+          langsung praktik gratis semoga sukses dengan sistem ini🚀
+        </p>
+
+        <br />
+
+        <button id="closeFunnelPopup" class="btn">Mengerti</button>
+      </div>
+    </div>
+
+    <script>
+      /* ===============================
+             CONFIG DEFAULT
+          =============================== */
+      const DEFAULT_CONFIG = {
+        adminPassword: "",
+        brand: "Almaira Olstore",
+        heroTitle: `Rahasia <span>Meningkatkan Engagement FB Pro</span><br>Agar Postingan Lebih Ramai dan Lebih Aktif`,
+        heroDesc: `Pelajari pola konten, cara memancing interaksi, dan strategi sederhana agar postingan FB Pro lebih sering mendapat like, komentar, share, dan perhatian audiens.`,
+        coverMiniTitle: `FB Pro Engagement<br><span style="color:var(--gold2)">Panduan Praktis Creator</span>`,
+        coverMiniDesc: `Strategi konten sederhana agar postingan lebih ramai, lebih aktif, dan lebih menarik di mata audiens.`,
+        flipTitle: `Strategi Konten FB Pro yang Membuat Audiens Lebih Sering Berinteraksi`,
+        promoText: `Download eBook di FunnelWeb + pelajari strateginya`,
+        ctaText: `Buka Akses Materi`,
+        mainLink: `https://link-hijau.linkvertise.com/`,
+        waLink: `https://wa.me/6282354730849?text=Halo%20Almaira%2C%20saya%20ingin%20tanya%20tentang%20eBook%20FB%20Pro%20Engagement`,
+        heroImage: "",
+        flipCoverImage: "",
+        flipPage1: "",
+        flipPage2: "",
+        flipPage3: "",
+        flipPage4: "",
+        flipPage5: "",
+        flipPage6: "",
+      };
+
+      let CONFIG = { ...DEFAULT_CONFIG };
+
+      async function loadConfig() {
+        const res = await fetch("http://localhost:5000/config");
+
+        const data = await res.json();
+
+        CONFIG = { ...DEFAULT_CONFIG, ...data };
+
+        applyConfig();
+      }
+
+      function saveConfig() {
+        fetch("http://localhost:5000/save-config", {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify(CONFIG),
+        })
+          .then((res) => res.json())
+
+          .then((data) => {
+            console.log(data);
+            alert("✅ Perubahan berhasil disimpan");
+          })
+
+          .catch((err) => {
+            console.error(err);
+            alert("❌ Gagal menyimpan perubahan");
+          });
+      }
+
+      function resetConfig() {
+        CONFIG = { ...DEFAULT_CONFIG };
+
+        fetch("http://localhost:5000/save-config", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(CONFIG),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            applyConfig();
+            fillAdminFields();
+            alert("✅ Config berhasil direset");
+          })
+          .catch((err) => {
+            console.error(err);
+            alert("❌ Reset gagal");
+          });
+      }
+      /* ===============================
+             APPLY CONFIG
+          =============================== */
+      function applyConfig() {
+        document.getElementById("brandName").innerHTML = CONFIG.brand;
+        document.getElementById("brandBadge").innerHTML = CONFIG.brand;
+        document.getElementById("footerBrand").innerHTML = CONFIG.brand;
+        document.getElementById("heroTitle").innerHTML = CONFIG.heroTitle;
+        document.getElementById("heroDesc").innerHTML = CONFIG.heroDesc;
+        document.getElementById("coverMiniTitle").innerHTML =
+          CONFIG.coverMiniTitle;
+        document.getElementById("coverMiniDesc").innerHTML =
+          CONFIG.coverMiniDesc;
+        document.getElementById("flipTitle").innerHTML = CONFIG.flipTitle;
+        document.getElementById("promoText").innerHTML = CONFIG.promoText;
+
+        const ctas = document.querySelectorAll(".cta-main");
+        ctas.forEach((btn) => {
+          btn.href = CONFIG.mainLink;
+          btn.innerHTML =
+            btn.id === "mainCtaFloat"
+              ? "🚀 " + CONFIG.ctaText.replace("Buka ", "")
+              : CONFIG.ctaText;
+        });
+
+        if (CONFIG.heroImage) {
+          document.documentElement.style.setProperty(
+            "--hero-cover",
+            `url('${CONFIG.heroImage}')`,
+          );
+          document.getElementById("heroPreview").style.backgroundImage =
+            `url('${CONFIG.heroImage}')`;
+        } else {
+          document.getElementById("heroPreview").style.backgroundImage =
+            `var(--hero-cover)`;
+        }
+
+        if (CONFIG.flipCoverImage) {
+          document.documentElement.style.setProperty(
+            "--flip-cover",
+            `url('${CONFIG.flipCoverImage}')`,
+          );
+          document.getElementById("flipCoverPreview").style.backgroundImage =
+            `url('${CONFIG.flipCoverImage}')`;
+        } else {
+          document.getElementById("flipCoverPreview").style.backgroundImage =
+            `var(--flip-cover)`;
+        }
+
+        const flipVars = [
+          ["--flip-page-1", CONFIG.flipPage1],
+          ["--flip-page-2", CONFIG.flipPage2],
+          ["--flip-page-3", CONFIG.flipPage3],
+          ["--flip-page-4", CONFIG.flipPage4],
+          ["--flip-page-5", CONFIG.flipPage5],
+          ["--flip-page-6", CONFIG.flipPage6],
+        ];
+
+        flipVars.forEach(([varName, value]) => {
+          if (value) {
+            document.documentElement.style.setProperty(
+              varName,
+              `url('${value}')`,
+            );
+          }
+        });
+      }
+
+      /* ===============================
+             COUNTDOWN
+          =============================== */
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 2);
+      targetDate.setHours(23, 59, 59, 999);
+
+      const ids = {
+        days: document.getElementById("days"),
+        hours: document.getElementById("hours"),
+        minutes: document.getElementById("minutes"),
+        seconds: document.getElementById("seconds"),
+      };
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const diff = targetDate.getTime() - now;
+
+        if (diff <= 0) {
+          ids.days.textContent = "00";
+          ids.hours.textContent = "00";
+          ids.minutes.textContent = "00";
+          ids.seconds.textContent = "00";
+          return;
+        }
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const m = Math.floor((diff / (1000 * 60)) % 60);
+        const s = Math.floor((diff / 1000) % 60);
+
+        ids.days.textContent = String(d).padStart(2, "0");
+        ids.hours.textContent = String(h).padStart(2, "0");
+        ids.minutes.textContent = String(m).padStart(2, "0");
+        ids.seconds.textContent = String(s).padStart(2, "0");
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      /* ===============================
+             ADMIN SYSTEM
+          =============================== */
+      /* ===============================
+ADMIN SYSTEM
+=============================== */
+
+      const adminTrigger = document.getElementById("adminTrigger");
+      const loginOverlay = document.getElementById("loginOverlay");
+      const adminOverlay = document.getElementById("adminOverlay");
+      const loginAdminBtn = document.getElementById("loginAdminBtn");
+      const closeLoginBtn = document.getElementById("closeLoginBtn");
+      const closeAdminBtn = document.getElementById("closeAdminBtn");
+      const adminPasswordInput = document.getElementById("adminPasswordInput");
+      const loginMsg = document.getElementById("loginMsg");
+      const logoutAdminBtn = document.getElementById("logoutAdminBtn");
+
+      let adminTimeout;
+
+      /* buka login atau admin */
+      adminTrigger.addEventListener("click", () => {
+        if (sessionStorage.getItem("adminLogin") === "true") {
+          adminOverlay.classList.add("show");
+          fillAdminFields();
+          resetAdminTimer();
+        } else {
+          loginOverlay.classList.add("show");
+        }
+      });
+
+      /* tutup login */
+      closeLoginBtn.addEventListener("click", () => {
+        loginOverlay.classList.remove("show");
+      });
+
+      /* tutup admin */
+      closeAdminBtn.addEventListener("click", () => {
+        adminOverlay.classList.remove("show");
+      });
+
+      /* LOGIN ADMIN */
+
+      loginAdminBtn.addEventListener("click", async () => {
+        const password = adminPasswordInput.value;
+
+        const res = await fetch("http://localhost:5000/admin-login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ password }),
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          sessionStorage.setItem("adminLogin", "true");
+
+          loginOverlay.classList.remove("show");
+          adminOverlay.classList.add("show");
+
+          adminPasswordInput.value = "";
+          loginMsg.textContent = "";
+
+          fillAdminFields();
+          resetAdminTimer();
+        } else {
+          loginMsg.textContent = "Password salah";
+        }
+      });
+
+      /* LOGOUT ADMIN */
+
+      logoutAdminBtn.addEventListener("click", () => {
+        sessionStorage.removeItem("adminLogin");
+
+        adminOverlay.classList.remove("show");
+
+        alert("Admin logout");
+
+        location.reload();
+      });
+
+      /* ===============================
+AUTO LOGOUT JIKA IDLE
+=============================== */
+
+      function resetAdminTimer() {
+        if (sessionStorage.getItem("adminLogin") !== "true") return;
+
+        clearTimeout(adminTimeout);
+
+        adminTimeout = setTimeout(
+          () => {
+            sessionStorage.removeItem("adminLogin");
+
+            alert("Session admin habis. Silakan login kembali.");
+
+            location.reload();
+          },
+          30 * 60 * 1000,
+        ); // 30 menit
+      }
+
+      /* reset timer saat aktivitas */
+      document.addEventListener("mousemove", resetAdminTimer);
+      document.addEventListener("keydown", resetAdminTimer);
+      document.addEventListener("click", resetAdminTimer);
+      /* ===============================
+             ADMIN FIELDS
+          =============================== */
+      const adminFields = {
+        brand: document.getElementById("adminBrand"),
+        heroTitle: document.getElementById("adminHeroTitle"),
+        heroDesc: document.getElementById("adminHeroDesc"),
+        coverMiniTitle: document.getElementById("adminCoverMiniTitle"),
+        coverMiniDesc: document.getElementById("adminCoverMiniDesc"),
+        flipTitle: document.getElementById("adminFlipTitle"),
+        promoText: document.getElementById("adminPromoText"),
+        ctaText: document.getElementById("adminCtaText"),
+        mainLink: document.getElementById("adminMainLink"),
+        waLink: document.getElementById("adminWaLink"),
+      };
+
+      function fillAdminFields() {
+        adminFields.brand.value = CONFIG.brand;
+        adminFields.heroTitle.value = CONFIG.heroTitle;
+        adminFields.heroDesc.value = CONFIG.heroDesc;
+        adminFields.coverMiniTitle.value = CONFIG.coverMiniTitle;
+        adminFields.coverMiniDesc.value = CONFIG.coverMiniDesc;
+        adminFields.flipTitle.value = CONFIG.flipTitle;
+        adminFields.promoText.value = CONFIG.promoText;
+        adminFields.ctaText.value = CONFIG.ctaText;
+        adminFields.mainLink.value = CONFIG.mainLink;
+        adminFields.waLink.value = CONFIG.waLink;
+
+        document.getElementById("heroPreview").style.backgroundImage =
+          CONFIG.heroImage ? `url('${CONFIG.heroImage}')` : "";
+        document.getElementById("flipCoverPreview").style.backgroundImage =
+          CONFIG.flipCoverImage ? `url('${CONFIG.flipCoverImage}')` : "";
+      }
+
+      function collectAdminFields() {
+        CONFIG.brand = adminFields.brand.value.trim() || DEFAULT_CONFIG.brand;
+        CONFIG.heroTitle =
+          adminFields.heroTitle.value.trim() || DEFAULT_CONFIG.heroTitle;
+        CONFIG.heroDesc =
+          adminFields.heroDesc.value.trim() || DEFAULT_CONFIG.heroDesc;
+        CONFIG.coverMiniTitle =
+          adminFields.coverMiniTitle.value.trim() ||
+          DEFAULT_CONFIG.coverMiniTitle;
+        CONFIG.coverMiniDesc =
+          adminFields.coverMiniDesc.value.trim() ||
+          DEFAULT_CONFIG.coverMiniDesc;
+        CONFIG.flipTitle =
+          adminFields.flipTitle.value.trim() || DEFAULT_CONFIG.flipTitle;
+        CONFIG.promoText =
+          adminFields.promoText.value.trim() || DEFAULT_CONFIG.promoText;
+        CONFIG.ctaText =
+          adminFields.ctaText.value.trim() || DEFAULT_CONFIG.ctaText;
+        CONFIG.mainLink =
+          adminFields.mainLink.value.trim() || DEFAULT_CONFIG.mainLink;
+        CONFIG.waLink =
+          adminFields.waLink.value.trim() || DEFAULT_CONFIG.waLink;
+      }
+
+      document.getElementById("saveConfigBtn").addEventListener("click", () => {
+        collectAdminFields();
+
+        saveConfig();
+
+        applyConfig();
+      });
+
+      document
+        .getElementById("resetConfigBtn")
+        .addEventListener("click", () => {
+          if (confirm("Reset semua setting ke default?")) {
+            resetConfig();
+          }
+        });
+
+      /* ===============================
+             IMAGE UPLOAD SYSTEM
+          =============================== */
+      function fileToBase64(file, callback) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          callback(e.target.result);
+        };
+        reader.readAsDataURL(file);
+      }
+
+      function bindImageInput(inputId, configKey, previewId = null) {
+        const input = document.getElementById(inputId);
+        input.addEventListener("change", function () {
+          const file = this.files[0];
+          if (!file) return;
+          fileToBase64(file, (base64) => {
+            CONFIG[configKey] = base64;
+            saveConfig();
+            applyConfig();
+            if (previewId) {
+              document.getElementById(previewId).style.backgroundImage =
+                `url('${base64}')`;
+            }
+          });
+        });
+      }
+
+      bindImageInput("heroImageInput", "heroImage", "heroPreview");
+      bindImageInput("flipCoverInput", "flipCoverImage", "flipCoverPreview");
+      bindImageInput("flipPage1Input", "flipPage1");
+      bindImageInput("flipPage2Input", "flipPage2");
+      bindImageInput("flipPage3Input", "flipPage3");
+      bindImageInput("flipPage4Input", "flipPage4");
+      bindImageInput("flipPage5Input", "flipPage5");
+      bindImageInput("flipPage6Input", "flipPage6");
+
+      /* ===============================
+             EXPORT / IMPORT
+          =============================== */
+      document
+        .getElementById("exportConfigBtn")
+        .addEventListener("click", () => {
+          collectAdminFields();
+          const dataStr = JSON.stringify(CONFIG, null, 2);
+          navigator.clipboard
+            .writeText(dataStr)
+            .then(() => alert("Config berhasil dicopy ke clipboard."))
+            .catch(() => {
+              alert("Gagal copy otomatis. Silakan ambil dari console/browser.");
+              console.log(dataStr);
+            });
+        });
+
+      document
+        .getElementById("importConfigBtn")
+        .addEventListener("click", () => {
+          const raw = document.getElementById("importArea").value.trim();
+          if (!raw) return alert("Paste config JSON dulu.");
+          try {
+            const imported = JSON.parse(raw);
+            CONFIG = { ...DEFAULT_CONFIG, ...imported };
+            saveConfig();
+            applyConfig();
+            fillAdminFields();
+            alert("Config berhasil diimport.");
+          } catch (err) {
+            alert("Format JSON tidak valid.");
+          }
+        });
+
+      /* ===============================
+             INIT
+          =============================== */
+
+      loadConfig();
+      /* ESC close modal */
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          loginOverlay.classList.remove("show");
+          adminOverlay.classList.remove("show");
+        }
+      });
+
+      const btnDownload = document.getElementById("btnDownload");
+      const popupDownload = document.getElementById("popupDownload");
+      const closePopup = document.getElementById("closePopup");
+
+      btnDownload.addEventListener("click", () => {
+        popupDownload.style.display = "flex";
+      });
+
+      closePopup.addEventListener("click", () => {
+        popupDownload.style.display = "none";
+      });
+
+      // Klik di luar popup juga bisa menutup
+      popupDownload.addEventListener("click", (e) => {
+        if (e.target === popupDownload) {
+          popupDownload.style.display = "none";
+        }
+      });
+
+      // POP FLOATING
+      const btnFunnelFloat = document.getElementById("btnFunnelFloat");
+      const popupFunnel = document.getElementById("popupFunnel");
+      const closeFunnelPopup = document.getElementById("closeFunnelPopup");
+
+      btnFunnelFloat.addEventListener("click", function (e) {
+        e.preventDefault();
+        popupFunnel.style.display = "flex";
+      });
+
+      closeFunnelPopup.addEventListener("click", function () {
+        popupFunnel.style.display = "none";
+      });
+
+      popupFunnel.addEventListener("click", function (e) {
+        if (e.target === popupFunnel) {
+          popupFunnel.style.display = "none";
+        }
+      });
+
+      /* ===============================
+      ANTI RIGHT CLICK
+      =============================== */
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+      });
+
+      /* ===============================
+      ANTI SELECT TEXT
+      =============================== */
+      document.addEventListener("selectstart", function (e) {
+        e.preventDefault();
+      });
+
+      /* ===============================
+      ANTI COPY
+      =============================== */
+      document.addEventListener("copy", function (e) {
+        e.preventDefault();
+      });
+
+      /* ===============================
+      BLOCK KEY SHORTCUT
+      =============================== */
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "F12") {
+          e.preventDefault();
+        }
+
+        if (e.ctrlKey && e.shiftKey && e.key === "I") {
+          e.preventDefault();
+        }
+
+        if (e.ctrlKey && e.shiftKey && e.key === "J") {
+          e.preventDefault();
+        }
+
+        if (e.ctrlKey && e.key === "U") {
+          e.preventDefault();
+        }
+      });
+
+      /* ===============================
+      ANTI DEVTOOLS
+      =============================== */
+      (function () {
+        const threshold = 160;
+
+        setInterval(function () {
+          if (
+            window.outerWidth - window.innerWidth > threshold ||
+            window.outerHeight - window.innerHeight > threshold
+          ) {
+            document.body.innerHTML = `
+            <div style="
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:#000;
+            color:#fff;
+            font-family:sans-serif;
+            text-align:center;
+            padding:30px;
+            ">
+            <div>
+            <h2>⚠️ Akses Ditolak</h2>
+            <p>Developer Tools tidak diperbolehkan pada halaman ini.</p>
+            </div>
+            </div>
+            `;
+          }
+        }, 1000);
+      })();
+
+      /* ===============================
+      CLEAR CONSOLE
+      =============================== */
+      setInterval(function () {
+        console.clear();
+      }, 1000);
+
+      loadConfig();
+
+      /* ===============================
+      SLIDER EBOOK MARKETPLACE
+      =============================== */
+
+      async function loadSliderEbooks() {
+        const res = await fetch("http://localhost:5000/ebooks");
+
+        const ebooks = await res.json();
+
+        const slider = document.getElementById("ebookSlider");
+
+        let html = "";
+
+        /* buat isi slider */
+        ebooks.forEach((book) => {
+          html += `
+      <div class="card">
+      <img src="/uploads/cover/${book.cover}" alt="${book.title}">
+      </div>
+      `;
+        });
+
+        /* DUPLIKASI BIAR LOOP HALUS */
+        slider.innerHTML = html + html + html + html;
+      }
+
+      loadSliderEbooks();
+    </script>
+  </body>
+</html>

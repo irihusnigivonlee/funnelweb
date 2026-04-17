@@ -1,0 +1,585 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketplace Video Reels</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        background: #0f172a;
+        margin: 0;
+        color: white;
+      }
+
+      /* NAVBAR */
+
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 15px 25px;
+        background: #020617;
+      }
+
+      /* LOGO */
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      /* MENU DESKTOP */
+
+      .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .menu {
+        text-decoration: none;
+        color: white;
+        font-size: 15px;
+      }
+
+      /* SHORTLINK BUTTON */
+
+      .daftar {
+        background: #f59e0b;
+        padding: 10px 15px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+      }
+
+      /* HAMBURGER */
+
+      .hamburger {
+        display: none;
+        font-size: 25px;
+        cursor: pointer;
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: block;
+        }
+
+        .nav-menu {
+          display: none;
+
+          position: absolute;
+
+          top: 60px;
+          right: 20px;
+
+          background: #020617;
+
+          flex-direction: column;
+
+          padding: 15px;
+
+          border-radius: 10px;
+
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+
+          gap: 10px;
+
+          min-width: 180px;
+        }
+
+        .nav-menu.active {
+          display: flex;
+        }
+
+        .menu {
+          padding: 8px 5px;
+          display: block;
+        }
+
+        .daftar {
+          text-align: center;
+        }
+      }
+
+      /* HEADER */
+
+      .header {
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .header h1 {
+        margin: 0;
+      }
+
+      /* GRID */
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 25px;
+        padding: 30px;
+      }
+
+      /* CARD */
+
+      .card {
+        background: #1e293b;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      /* THUMB */
+
+      .thumb {
+        position: relative;
+      }
+
+      .thumb video {
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+      }
+
+      /* PLAY ICON */
+
+      .play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px 15px;
+        border-radius: 50%;
+      }
+
+      /* STATUS */
+
+      .status {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 6px;
+        font-weight: bold;
+      }
+
+      .available {
+        background: #22c55e;
+      }
+
+      .expired {
+        background: #ef4444;
+      }
+
+      /* BODY */
+
+      .body {
+        padding: 15px;
+      }
+
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .downloads {
+        font-size: 12px;
+        color: #94a3b8;
+        margin-bottom: 10px;
+      }
+
+      /* BUTTON */
+
+      button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        background: #22c55e;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #16a34a;
+      }
+
+      .btn-website {
+        background: #3b82f6;
+        margin-top: 8px;
+      }
+
+      .btn-website:hover {
+        background: #2563eb;
+      }
+      .card {
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-8px) scale(1.02);
+      }
+      .reels-feed {
+        height: 90vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+      }
+      
+
+      .btn-tutorial:hover {
+        background: #9333ea;
+      }
+      .btn-tutorial {
+        background: #a855f7;
+        margin-top: 8px;
+      }
+
+      
+
+      .category-wrapper {
+        position: relative;
+        width: 220px;
+        margin: 20px auto;
+      }
+
+      .category-toggle {
+        width: 100%;
+        padding: 14px;
+        background: #22c55e;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .category-menu {
+        display: none;
+        position: absolute;
+        top: 55px;
+        width: 100%;
+        background: #22c55e;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .category-menu button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background: none;
+        color: white;
+        cursor: pointer;
+        font-size: 15px;
+      }
+
+      .category-menu button:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      id="videoPopup"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        style="position: relative; width: 100%; max-width: 260px; margin: auto"
+      >
+        <video
+          id="popupVideo"
+          controls
+          style="
+            width: 100%;
+            border-radius: 10px;
+            width: 100%;
+            border-radius: 12px;
+          "
+        ></video>
+
+        <button
+          onclick="closeVideo()"
+          style="
+            position: absolute;
+            bottom: -40px;
+            right: 0;
+            background: red;
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+          "
+        >
+          ✖ Tutup
+        </button>
+      </div>
+    </div>
+
+    <div class="navbar">
+      <div class="logo">
+        <a
+          href="http://localhost:5000/"
+          
+          style="color: blue; font-weight: bolder; text-decoration: none"
+        >
+          Funnel<span style="font-style: italic; color: orange">Web</span></a
+        >
+      </div>
+
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+      <div class="nav-menu" id="navMenu">
+        <a class="menu" href="/">Gallery-eBook</a>
+
+        <a class="menu" href="http://localhost:5000/upload-video.html"
+          >Upload-Video</a
+        >
+
+        <a
+          class="daftar"
+          href="https://linkvertise.com/?affiliate_id=1314520"
+          target="_blank"
+        >
+          Daftar Shortlink
+        </a>
+      </div>
+    </div>
+
+    <div class="category-wrapper">
+      <button class="category-toggle" onclick="toggleCategory()">
+        Kategori ▼
+      </button>
+
+      <div class="category-menu" id="categoryMenu">
+        <button onclick="filterCategory('all')">All</button>
+        <button onclick="filterCategory('drone')">Drone</button>
+        <button onclick="filterCategory('nature')">Nature</button>
+        <button onclick="filterCategory('motivasi')">Motivasi</button>
+        <button onclick="filterCategory('cinematic')">Cinematic</button>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 20px">
+      <input
+        id="searchVideo"
+        placeholder="Cari video..."
+        style="
+          width: 300px;
+          max-width: 90%;
+          padding: 10px;
+          border-radius: 8px;
+          border: none;
+          outline: none;
+        "
+        onkeyup="searchVideo()"
+      />
+    </div>
+    <div class="header">
+      <h1>🎬 Marketplace Video Reels</h1>
+
+      <p>
+        Download video reels bebas hak cipta <br />ikuti tutorial cara mengedit
+        video agar aman di gunakan <br />di Konten Fbpro
+      </p>
+    </div>
+
+    <div class="grid" id="gallery"></div>
+
+    <script>
+      async function loadVideos() {
+        const res = await fetch("/videos");
+        const videos = await res.json();
+
+        let html = "";
+
+        videos.forEach((v) => {
+          let statusClass = v.status == "expired" ? "expired" : "available";
+          let statusText = v.status == "expired" ? "Expired" : "Available";
+
+          let tutorialBtn = "";
+          let websiteBtn = "";
+
+          if (v.tutorial) {
+            tutorialBtn = `
+      <a href="${v.tutorial}" target="_blank">
+        <button class="btn-tutorial">
+          🎓 Tutorial Konten
+        </button>
+      </a>`;
+          }
+
+          if (v.website) {
+            websiteBtn = `
+      <a href="${v.website}" target="_blank">
+        <button class="btn-website">
+          🌐 Lihat di Facebook
+        </button>
+      </a>`;
+          }
+
+          html += `
+
+    <div class="card">
+
+      <div class="thumb" onclick="playVideo('${v.video}')">
+
+        <img
+        src="${
+          v.thumb.startsWith("http") || v.thumb.startsWith("/uploads")
+            ? v.thumb
+            : "/uploads/thumb/" + v.thumb
+        }"
+        style="width:100%;height:380px;object-fit:cover"
+        >
+
+        <div class="play">▶</div>
+
+        <div class="status ${statusClass}">
+          ${statusText}
+        </div>
+
+      </div>
+
+      <div class="body">
+
+        <div class="title">${v.title}</div>
+
+        <div style="font-size:12px;color:#38bdf8;">
+          #${v.category || "video"}
+        </div>
+
+        <div class="downloads">
+          Download : ${v.downloads || 0}
+        </div>
+
+        <a href="/video-download/${v.id}" target="_blank">
+          <button>⬇ Download Video</button>
+        </a>
+
+        ${tutorialBtn}
+        ${websiteBtn}
+
+      </div>
+
+    </div>
+
+    `;
+        });
+
+        document.getElementById("gallery").innerHTML = html;
+      }
+
+      loadVideos();
+
+      function toggleMenu() {
+        const menu = document.getElementById("navMenu");
+
+        menu.classList.toggle("active");
+      }
+
+      function playVideo(video) {
+        const popup = document.getElementById("videoPopup");
+        const player = document.getElementById("popupVideo");
+
+        player.src = video.startsWith("http") ? video : "/uploads/" + video;
+
+        popup.style.display = "flex";
+      }
+
+      function closeVideo() {
+        const popup = document.getElementById("videoPopup");
+        const player = document.getElementById("popupVideo");
+
+        player.pause();
+        player.src = "";
+
+        popup.style.display = "none";
+      }
+
+      function searchVideo() {
+        const input = document
+          .getElementById("searchVideo")
+          .value.toLowerCase();
+
+        const cards = document.querySelectorAll(".card");
+
+        cards.forEach((card) => {
+          const title = card.querySelector(".title").innerText.toLowerCase();
+          const category = card.innerText.toLowerCase();
+
+          if (title.includes(input) || category.includes(input)) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      function filterCategory(category) {
+        const cards = document.querySelectorAll(".card");
+
+        cards.forEach((card) => {
+          const text = card.innerText.toLowerCase();
+
+          if (category == "all" || text.includes(category)) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      function toggleCategory() {
+        const menu = document.getElementById("categoryMenu");
+
+        if (menu.style.display === "block") {
+          menu.style.display = "none";
+        } else {
+          menu.style.display = "block";
+        }
+      }
+
+      document.addEventListener("click", function (e) {
+        const wrapper = document.querySelector(".category-wrapper");
+
+        if (!wrapper.contains(e.target)) {
+          document.getElementById("categoryMenu").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

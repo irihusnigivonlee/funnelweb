@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Upload Video - FunnelWeb</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        background: #0f172a;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .box {
+        background: #1e293b;
+        padding: 30px;
+        border-radius: 10px;
+        width: 450px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 6px;
+      }
+
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        margin-top: 10px;
+      }
+
+      button {
+        width: 100%;
+        padding: 14px;
+        margin-top: 20px;
+        background: #22c55e;
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 8px;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background: #16a34a;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <h2>Upload Video Reels</h2>
+      <input id="creator" placeholder="Nama Creator" />
+      <input id="title" placeholder="Judul Video" />
+
+      <label>Kategori</label>
+
+      <select id="category">
+        <option value="">Pilih kategori</option>
+        <option value="drone">Drone</option>
+        <option value="nature">Nature</option>
+        <option value="motivasi">Motivasi</option>
+        <option value="cinematic">Cinematic</option>
+        <option value="background">Background</option>
+      </select>
+
+      <label>Link Website Creator</label>
+
+      <textarea id="website"></textarea>
+
+      <label>Link Tutorial Konten</label>
+
+      <textarea id="tutorial"></textarea>
+
+      <input id="linkvertise" placeholder="Link Linkvertise" />
+
+      <p style="color: #facc15; font-size: 12px">
+        Gunakan shortlink dari Linkvertise affiliate
+      </p>
+
+      <label>Upload Video</label>
+
+      <input type="file" id="video" accept="video/*" />
+
+      <button onclick="uploadVideo()">Upload Video</button>
+    </div>
+
+    <script>
+      function uploadVideo() {
+        const creator = document.getElementById("creator").value;
+        const title = document.getElementById("title").value;
+        const category = document.getElementById("category").value;
+        const website = document.getElementById("website").value;
+        const tutorial = document.getElementById("tutorial").value;
+        const linkvertise = document.getElementById("linkvertise").value;
+        const video = document.getElementById("video").files[0];
+
+        /* VALIDASI LINKVERTISE */
+
+        if (
+          !linkvertise.includes("direct-link.net/1314520") &&
+          !linkvertise.includes(
+            "linkvertise.com/?publisherClosed=true&affiliate_id=1314520",
+          )
+        ) {
+          alert("Gunakan link affiliate Linkvertise yang benar!");
+
+          return;
+        }
+
+        if (!creator || !title || !video) {
+          alert("Lengkapi data terlebih dahulu");
+          return;
+        }
+
+        const formData = new FormData();
+
+        formData.append("creator", creator);
+        formData.append("title", title);
+        formData.append("category", category);
+        formData.append("website", website);
+        formData.append("tutorial", tutorial);
+        formData.append("linkvertise", linkvertise);
+        formData.append("video", video);
+
+        fetch("/upload-video", {
+          method: "POST",
+          body: formData,
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            alert(data.message);
+            window.location = "/gallery.html";
+          })
+          .catch(() => {
+            alert("Upload gagal");
+          });
+      }
+    </script>
+  </body>
+</html>
