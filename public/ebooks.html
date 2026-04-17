@@ -1062,15 +1062,11 @@
     <div class="topbar">
       <div class="topbar-inner">
         <div>
-          <strong
-            >Almaira<span style="font-style: italic; color: var(--orange)"
-              >Olstore</span
-            ><br
-          /></strong>
+          <strong>Almaira<span style="font-style: italic; color: var(--orange);">Olstore</span><br></strong>
           <span id="promoText"
             >Buka eBook
             <a
-              href="https://funnelweb-production.up.railway.app/index.html"
+              href="http://localhost:5000/"
               ;
               style="color: blue; font-weight: bolder"
               >Funnel<span style="font-style: italic; color: orange"
@@ -1091,12 +1087,11 @@
     <section class="slider-section">
       <div class="slider-title">
         Koleksi eBook Siap di download <br />gratis di
-        <a
-          class="btn-blink"
-          href="https://funnelweb-production.up.railway.app/index.html"
+      <a class="btn-blink"
+          href="http://localhost:5000/"
           ;
-          style="color: blue; font-weight: bolder; font-size: 25px"
-          >Funnel<span style="font-style: italic; color: orange">Web🚀</span></a
+          style="color: blue; font-weight: bolder; font-size: 25px;"
+        >Funnel<span style="font-style: italic; color: orange">Web🚀</span></a
         >
       </div>
 
@@ -1300,7 +1295,7 @@
               Pahami cara mengajak audiens berinteraksi tanpa terasa memaksa
               atau kaku, dan perlu diingat bahwa
               <a
-                href="https://funnelweb-production.up.railway.app/"
+                href="http://localhost:5000/"
                 ;
                 style="color: blue; font-weight: bolder"
               >
@@ -1326,7 +1321,7 @@
           <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin: 14px 0">
             Materi khusus
             <a
-              href="https://funnelweb-production.up.railway.app/"
+              href="http://localhost:5000/"
               ;
               style="color: blue; font-weight: bolder"
             >
@@ -1452,10 +1447,7 @@
               target="_blank"
               >Buka Akses Sekarang</a
             >
-            <a
-              class="btn-outline"
-              href="https://funnelweb-production.up.railway.app/"
-              target="_blank"
+            <a class="btn-outline" href="http://localhost:5000/" target="_blank"
               >Kunjungi Gallery</a
             >
           </div>
@@ -1475,7 +1467,7 @@
             <div>
               🎁 Sistematika dunia perkontenan
               <a
-                href="https://funnelweb-production.up.railway.app/"
+                href="http://localhost:5000/"
                 ;
                 style="color: blue; font-weight: bolder"
                 >Funnel<span style="font-style: italic; color: orange"
@@ -1578,7 +1570,7 @@
       © 2026 <span id="footerBrand">Almaira Olstore</span> <br />
       eBook
       <a
-        href="https://funnelweb-production.up.railway.app/"
+        href="http://localhost:5000/"
         ;
         style="color: blue; font-weight: bolder"
         >Funnel<span style="font-style: italic; color: orange">Web</span></a
@@ -1656,7 +1648,6 @@
             <button class="btn-mini" id="saveConfigBtn">💾 Save</button>
             <button class="btn-mini" id="resetConfigBtn">♻ Reset</button>
             <button class="btn-mini" id="exportConfigBtn">📤 Export</button>
-            <button class="btn-mini" id="logoutAdminBtn">🚪 Logout</button>
             <button class="btn-mini" id="closeAdminBtn">✖ Tutup</button>
           </div>
         </div>
@@ -1806,9 +1797,8 @@
         "
       >
         <h2>
-          ⚙️ Setting
-          <a
-            href="https://funnelweb-production.up.railway.app/"
+          ⚙️ Setting <a
+            href="http://localhost:5000/"
             ;
             style="color: blue; font-weight: bolder"
             >Funnel<span style="font-style: italic; color: orange">Web</span></a
@@ -1819,14 +1809,14 @@
           Download dulu eBook.<br /><br />
           Panduan Setting Bisnis
           <a
-            href="https://funnelweb-production.up.railway.app/"
+            href="http://localhost:5000/"
             ;
             style="color: blue; font-weight: bolder"
             >Funnel<span style="font-style: italic; color: orange">Web</span></a
           >
-          Fbpro untuk <br />anda tersedia pada Bab ebook dilengkapi link panduan
-          video cara kerjanya<br />Raih penghasilan 10-100 Dollar perhari
-          langsung praktik gratis semoga sukses dengan sistem ini🚀
+          Fbpro untuk <br />anda tersedia pada Bab ebook dilengkapi link
+          panduan video cara kerjanya<br />Raih penghasilan 10-100 Dollar
+          perhari langsung praktik gratis semoga sukses dengan sistem ini🚀
         </p>
 
         <br />
@@ -1837,10 +1827,10 @@
 
     <script>
       /* ===============================
-             CONFIG DEFAULT
-          =============================== */
+       CONFIG DEFAULT
+    =============================== */
       const DEFAULT_CONFIG = {
-        adminPassword: "",
+        adminPassword: "admin123",
         brand: "Almaira Olstore",
         heroTitle: `Rahasia <span>Meningkatkan Engagement FB Pro</span><br>Agar Postingan Lebih Ramai dan Lebih Aktif`,
         heroDesc: `Pelajari pola konten, cara memancing interaksi, dan strategi sederhana agar postingan FB Pro lebih sering mendapat like, komentar, share, dan perhatian audiens.`,
@@ -1864,9 +1854,7 @@
       let CONFIG = { ...DEFAULT_CONFIG };
 
       async function loadConfig() {
-        const res = await fetch(
-          "https://funnelweb-production.up.railway.app/config",
-        );
+        const res = await fetch("http://localhost:5000/config");
 
         const data = await res.json();
 
@@ -1876,7 +1864,7 @@
       }
 
       function saveConfig() {
-        fetch("https://funnelweb-production.up.railway.app/save-config", {
+        fetch("http://localhost:5000/save-config", {
           method: "POST",
 
           headers: {
@@ -1901,7 +1889,7 @@
       function resetConfig() {
         CONFIG = { ...DEFAULT_CONFIG };
 
-        fetch("https://funnelweb-production.up.railway.app/save-config", {
+        fetch("http://localhost:5000/save-config", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -1921,8 +1909,8 @@
           });
       }
       /* ===============================
-             APPLY CONFIG
-          =============================== */
+       APPLY CONFIG
+    =============================== */
       function applyConfig() {
         document.getElementById("brandName").innerHTML = CONFIG.brand;
         document.getElementById("brandBadge").innerHTML = CONFIG.brand;
@@ -1989,8 +1977,8 @@
       }
 
       /* ===============================
-             COUNTDOWN
-          =============================== */
+       COUNTDOWN
+    =============================== */
       const targetDate = new Date();
       targetDate.setDate(targetDate.getDate() + 2);
       targetDate.setHours(23, 59, 59, 999);
@@ -2029,12 +2017,8 @@
       setInterval(updateCountdown, 1000);
 
       /* ===============================
-             ADMIN SYSTEM
-          =============================== */
-      /* ===============================
-ADMIN SYSTEM
-=============================== */
-
+       ADMIN SYSTEM
+    =============================== */
       const adminTrigger = document.getElementById("adminTrigger");
       const loginOverlay = document.getElementById("loginOverlay");
       const adminOverlay = document.getElementById("adminOverlay");
@@ -2043,102 +2027,34 @@ ADMIN SYSTEM
       const closeAdminBtn = document.getElementById("closeAdminBtn");
       const adminPasswordInput = document.getElementById("adminPasswordInput");
       const loginMsg = document.getElementById("loginMsg");
-      const logoutAdminBtn = document.getElementById("logoutAdminBtn");
 
-      let adminTimeout;
-
-      /* buka login atau admin */
       adminTrigger.addEventListener("click", () => {
-        if (sessionStorage.getItem("adminLogin") === "true") {
-          adminOverlay.classList.add("show");
-          fillAdminFields();
-          resetAdminTimer();
-        } else {
-          loginOverlay.classList.add("show");
-        }
+        loginOverlay.classList.add("show");
+        adminPasswordInput.value = "";
+        loginMsg.textContent = "";
       });
 
-      /* tutup login */
       closeLoginBtn.addEventListener("click", () => {
         loginOverlay.classList.remove("show");
       });
 
-      /* tutup admin */
       closeAdminBtn.addEventListener("click", () => {
         adminOverlay.classList.remove("show");
       });
 
-      /* LOGIN ADMIN */
-
-      loginAdminBtn.addEventListener("click", async () => {
-        const password = adminPasswordInput.value;
-
-        const res = await fetch("/admin-login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ password }),
-        });
-
-        const data = await res.json();
-
-        if (data.success) {
-          sessionStorage.setItem("adminLogin", "true");
-
+      loginAdminBtn.addEventListener("click", () => {
+        if (adminPasswordInput.value === CONFIG.adminPassword) {
           loginOverlay.classList.remove("show");
           adminOverlay.classList.add("show");
-
-          adminPasswordInput.value = "";
-          loginMsg.textContent = "";
-
           fillAdminFields();
-          resetAdminTimer();
         } else {
-          loginMsg.textContent = "Password salah";
+          loginMsg.textContent = "Password salah.";
         }
       });
 
-      /* LOGOUT ADMIN */
-
-      logoutAdminBtn.addEventListener("click", () => {
-        sessionStorage.removeItem("adminLogin");
-
-        adminOverlay.classList.remove("show");
-
-        alert("Admin logout");
-
-        location.reload();
-      });
-
       /* ===============================
-AUTO LOGOUT JIKA IDLE
-=============================== */
-
-      function resetAdminTimer() {
-        if (sessionStorage.getItem("adminLogin") !== "true") return;
-
-        clearTimeout(adminTimeout);
-
-        adminTimeout = setTimeout(
-          () => {
-            sessionStorage.removeItem("adminLogin");
-
-            alert("Session admin habis. Silakan login kembali.");
-
-            location.reload();
-          },
-          30 * 60 * 1000,
-        ); // 30 menit
-      }
-
-      /* reset timer saat aktivitas */
-      document.addEventListener("mousemove", resetAdminTimer);
-      document.addEventListener("keydown", resetAdminTimer);
-      document.addEventListener("click", resetAdminTimer);
-      /* ===============================
-             ADMIN FIELDS
-          =============================== */
+       ADMIN FIELDS
+    =============================== */
       const adminFields = {
         brand: document.getElementById("adminBrand"),
         heroTitle: document.getElementById("adminHeroTitle"),
@@ -2211,8 +2127,8 @@ AUTO LOGOUT JIKA IDLE
         });
 
       /* ===============================
-             IMAGE UPLOAD SYSTEM
-          =============================== */
+       IMAGE UPLOAD SYSTEM
+    =============================== */
       function fileToBase64(file, callback) {
         const reader = new FileReader();
         reader.onload = function (e) {
@@ -2248,8 +2164,8 @@ AUTO LOGOUT JIKA IDLE
       bindImageInput("flipPage6Input", "flipPage6");
 
       /* ===============================
-             EXPORT / IMPORT
-          =============================== */
+       EXPORT / IMPORT
+    =============================== */
       document
         .getElementById("exportConfigBtn")
         .addEventListener("click", () => {
@@ -2282,8 +2198,8 @@ AUTO LOGOUT JIKA IDLE
         });
 
       /* ===============================
-             INIT
-          =============================== */
+       INIT
+    =============================== */
 
       loadConfig();
       /* ESC close modal */
@@ -2334,29 +2250,29 @@ AUTO LOGOUT JIKA IDLE
       });
 
       /* ===============================
-      ANTI RIGHT CLICK
-      =============================== */
+ANTI RIGHT CLICK
+=============================== */
       document.addEventListener("contextmenu", function (e) {
         e.preventDefault();
       });
 
       /* ===============================
-      ANTI SELECT TEXT
-      =============================== */
+ANTI SELECT TEXT
+=============================== */
       document.addEventListener("selectstart", function (e) {
         e.preventDefault();
       });
 
       /* ===============================
-      ANTI COPY
-      =============================== */
+ANTI COPY
+=============================== */
       document.addEventListener("copy", function (e) {
         e.preventDefault();
       });
 
       /* ===============================
-      BLOCK KEY SHORTCUT
-      =============================== */
+BLOCK KEY SHORTCUT
+=============================== */
       document.addEventListener("keydown", function (e) {
         if (e.key === "F12") {
           e.preventDefault();
@@ -2376,8 +2292,8 @@ AUTO LOGOUT JIKA IDLE
       });
 
       /* ===============================
-      ANTI DEVTOOLS
-      =============================== */
+ANTI DEVTOOLS
+=============================== */
       (function () {
         const threshold = 160;
 
@@ -2387,30 +2303,30 @@ AUTO LOGOUT JIKA IDLE
             window.outerHeight - window.innerHeight > threshold
           ) {
             document.body.innerHTML = `
-            <div style="
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-            background:#000;
-            color:#fff;
-            font-family:sans-serif;
-            text-align:center;
-            padding:30px;
-            ">
-            <div>
-            <h2>⚠️ Akses Ditolak</h2>
-            <p>Developer Tools tidak diperbolehkan pada halaman ini.</p>
-            </div>
-            </div>
-            `;
+      <div style="
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      background:#000;
+      color:#fff;
+      font-family:sans-serif;
+      text-align:center;
+      padding:30px;
+      ">
+      <div>
+      <h2>⚠️ Akses Ditolak</h2>
+      <p>Developer Tools tidak diperbolehkan pada halaman ini.</p>
+      </div>
+      </div>
+      `;
           }
         }, 1000);
       })();
 
       /* ===============================
-      CLEAR CONSOLE
-      =============================== */
+CLEAR CONSOLE
+=============================== */
       setInterval(function () {
         console.clear();
       }, 1000);
@@ -2418,13 +2334,11 @@ AUTO LOGOUT JIKA IDLE
       loadConfig();
 
       /* ===============================
-      SLIDER EBOOK MARKETPLACE
-      =============================== */
+SLIDER EBOOK MARKETPLACE
+=============================== */
 
       async function loadSliderEbooks() {
-        const res = await fetch(
-          "https://funnelweb-production.up.railway.app/ebooks",
-        );
+        const res = await fetch("http://localhost:5000/ebooks");
 
         const ebooks = await res.json();
 
@@ -2435,10 +2349,10 @@ AUTO LOGOUT JIKA IDLE
         /* buat isi slider */
         ebooks.forEach((book) => {
           html += `
-      <div class="card">
-      <img src="/uploads/cover/${book.cover}" alt="${book.title}">
-      </div>
-      `;
+<div class="card">
+<img src="/uploads/cover/${book.cover}" alt="${book.title}">
+</div>
+`;
         });
 
         /* DUPLIKASI BIAR LOOP HALUS */
@@ -2447,32 +2361,5 @@ AUTO LOGOUT JIKA IDLE
 
       loadSliderEbooks();
     </script>
-    <script>
-async function loadSlider(){
-
-  const res = await fetch("/ebooks.json");
-  const ebooks = await res.json();
-
-  const slider = document.getElementById("ebookSlider");
-
-  slider.innerHTML = "";
-
-  ebooks.forEach(book => {
-
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `
-      <img src="${book.thumbnail}" alt="${book.title}">
-    `;
-
-    slider.appendChild(card);
-
-  });
-
-}
-
-loadSlider();
-</script>
   </body>
 </html>
