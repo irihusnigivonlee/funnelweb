@@ -1070,7 +1070,7 @@
           <span id="promoText"
             >Buka eBook
             <a
-              href="https://funnelweb-production.up.railway.app"
+              href="https://funnelweb-production.up.railway.app/"
               ;
               style="color: blue; font-weight: bolder"
               >Funnel<span style="font-style: italic; color: orange"
@@ -1452,7 +1452,10 @@
               target="_blank"
               >Buka Akses Sekarang</a
             >
-            <a class="btn-outline" href="https://funnelweb-production.up.railway.app" target="_blank"
+            <a
+              class="btn-outline"
+              href="https://funnelweb-production.up.railway.app/"
+              target="_blank"
               >Kunjungi Gallery</a
             >
           </div>
@@ -1472,7 +1475,7 @@
             <div>
               🎁 Sistematika dunia perkontenan
               <a
-                href="https://funnelweb-production.up.railway.app"
+                href="https://funnelweb-production.up.railway.app/"
                 ;
                 style="color: blue; font-weight: bolder"
                 >Funnel<span style="font-style: italic; color: orange"
@@ -1575,7 +1578,7 @@
       © 2026 <span id="footerBrand">Almaira Olstore</span> <br />
       eBook
       <a
-        href="https://funnelweb-production.up.railway.app"
+        href="https://funnelweb-production.up.railway.app/"
         ;
         style="color: blue; font-weight: bolder"
         >Funnel<span style="font-style: italic; color: orange">Web</span></a
@@ -1805,7 +1808,7 @@
         <h2>
           ⚙️ Setting
           <a
-            href="https://funnelweb-production.up.railway.app"
+            href="https://funnelweb-production.up.railway.app/"
             ;
             style="color: blue; font-weight: bolder"
             >Funnel<span style="font-style: italic; color: orange">Web</span></a
@@ -1816,7 +1819,7 @@
           Download dulu eBook.<br /><br />
           Panduan Setting Bisnis
           <a
-            href="https://funnelweb-production.up.railway.app"
+            href="https://funnelweb-production.up.railway.app/"
             ;
             style="color: blue; font-weight: bolder"
             >Funnel<span style="font-style: italic; color: orange">Web</span></a
@@ -1861,7 +1864,9 @@
       let CONFIG = { ...DEFAULT_CONFIG };
 
       async function loadConfig() {
-        const res = await fetch("https://funnelweb-production.up.railway.app/config");
+        const res = await fetch(
+          "https://funnelweb-production.up.railway.app/config",
+        );
 
         const data = await res.json();
 
@@ -2068,7 +2073,7 @@ ADMIN SYSTEM
       loginAdminBtn.addEventListener("click", async () => {
         const password = adminPasswordInput.value;
 
-        const res = await fetch("http://localhost:5000/admin-login", {
+        const res = await fetch("/admin-login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -2417,7 +2422,9 @@ AUTO LOGOUT JIKA IDLE
       =============================== */
 
       async function loadSliderEbooks() {
-        const res = await fetch("https://funnelweb-production.up.railway.app/ebooks");
+        const res = await fetch(
+          "https://funnelweb-production.up.railway.app/ebooks",
+        );
 
         const ebooks = await res.json();
 
